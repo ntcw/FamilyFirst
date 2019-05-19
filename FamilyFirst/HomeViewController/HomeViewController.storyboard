@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Title-->
         <scene sceneID="FtW-HT-1Nn">
             <objects>
                 <tableViewController id="MRK-EL-cbQ" sceneMemberID="viewController">
@@ -45,14 +45,21 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="MRK-EL-cbQ" id="4mf-Qi-lK9"/>
-                            <outlet property="delegate" destination="MRK-EL-cbQ" id="OVS-IF-lYI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="XiR-q8-e4i"/>
+                    <navigationItem key="navigationItem" title="Title" id="f0w-u8-hxN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXh-t6-dTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="154.6875"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="jNp-FP-ppr">
+            <objects>
+                <viewControllerPlaceholder id="7IH-HJ-UYV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WD4-02-EaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837" y="53"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TF7-RW-HeI">
