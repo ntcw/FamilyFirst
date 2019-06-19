@@ -18,6 +18,9 @@
 		8565216A2291E84C0047436C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856521692291E84C0047436C /* HomeViewController.swift */; };
 		8565216D2291EDD40047436C /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8565216C2291EDD40047436C /* SettingsViewController.storyboard */; };
 		856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8565216F2291EE750047436C /* AddMemberViewController.storyboard */; };
+		8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */; };
+		8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */; };
+		8580EE5C22BA7E1200E2407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5B22BA7E1200E2407D /* Images.xcassets */; };
 		D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D385EF012291F4A300018550 /* MemberViewController.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		856521692291E84C0047436C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8565216C2291EDD40047436C /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		8565216F2291EE750047436C /* AddMemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddMemberViewController.storyboard; sourceTree = "<group>"; };
+		8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunchViewController.storyboard; sourceTree = "<group>"; };
+		8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
+		8580EE5B22BA7E1200E2407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D385EF012291F4A300018550 /* MemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,7 @@
 		856520EB2288A75B0047436C /* FamilyFirst */ = {
 			isa = PBXGroup;
 			children = (
+				8580EE5622BA6EE200E2407D /* FirstLaunch */,
 				D385EF002291F48A00018550 /* Member */,
 				8565216E2291EE3B0047436C /* AddMember */,
 				8565216B2291ED9B0047436C /* Settings */,
@@ -117,6 +124,7 @@
 				856520F82288A75C0047436C /* LaunchScreen.storyboard */,
 				856520FB2288A75C0047436C /* Info.plist */,
 				856520F32288A75B0047436C /* FamilyFirst.xcdatamodeld */,
+				8580EE5B22BA7E1200E2407D /* Images.xcassets */,
 			);
 			path = FamilyFirst;
 			sourceTree = "<group>";
@@ -162,6 +170,15 @@
 				8565216F2291EE750047436C /* AddMemberViewController.storyboard */,
 			);
 			path = AddMember;
+			sourceTree = "<group>";
+		};
+		8580EE5622BA6EE200E2407D /* FirstLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */,
+				8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */,
+			);
+			path = FirstLaunch;
 			sourceTree = "<group>";
 		};
 		D385EF002291F48A00018550 /* Member */ = {
@@ -276,11 +293,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8580EE5C22BA7E1200E2407D /* Images.xcassets in Resources */,
 				856521682291E8160047436C /* HomeViewController.storyboard in Resources */,
 				856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */,
 				856520FA2288A75C0047436C /* LaunchScreen.storyboard in Resources */,
 				D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */,
 				8565216D2291EDD40047436C /* SettingsViewController.storyboard in Resources */,
+				8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */,
 				856520F72288A75C0047436C /* Assets.xcassets in Resources */,
 				856520F22288A75B0047436C /* Main.storyboard in Resources */,
 			);
@@ -307,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */,
 				856520F52288A75B0047436C /* FamilyFirst.xcdatamodeld in Sources */,
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
 				8565216A2291E84C0047436C /* HomeViewController.swift in Sources */,
@@ -484,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UJHZ7R572;
 				INFOPLIST_FILE = FamilyFirst/Info.plist;
@@ -502,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UJHZ7R572;
 				INFOPLIST_FILE = FamilyFirst/Info.plist;
