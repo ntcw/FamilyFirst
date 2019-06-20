@@ -31,6 +31,8 @@
 		D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */; };
 		D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D385EF012291F4A300018550 /* MemberViewController.storyboard */; };
 		D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */; };
+		D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */; };
+		D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		D32124F122BBC5E500A3DC1D /* FamilyFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FamilyFirst.xcdatamodel; sourceTree = "<group>"; };
 		D385EF012291F4A300018550 /* MemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberViewController.storyboard; sourceTree = "<group>"; };
 		D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
+		D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
+		D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberSubviewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				8565216F2291EE750047436C /* AddMemberViewController.storyboard */,
+				D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */,
+				D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */,
 			);
 			path = AddMember;
 			sourceTree = "<group>";
@@ -384,8 +390,11 @@
 				853BF15022BCD1B500A73946 /* TaskTableViewCell.swift in Sources */,
 				852CD44522C0FE9B002EB998 /* NewTaskViewController.swift in Sources */,
 				D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */,
+				D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */,
 				D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */,
 				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
+				856520F52288A75B0047436C /* FamilyFirst.xcdatamodeld in Sources */,
+				D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */,
 				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
 				85C4529422BA90430037363D /* SettingsViewController.swift in Sources */,
