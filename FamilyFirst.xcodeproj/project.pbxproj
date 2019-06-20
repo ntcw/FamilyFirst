@@ -16,11 +16,13 @@
 		856521102288A75C0047436C /* FamilyFirstUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8565210F2288A75C0047436C /* FamilyFirstUITests.swift */; };
 		856521682291E8160047436C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856521672291E8160047436C /* HomeViewController.storyboard */; };
 		8565216A2291E84C0047436C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856521692291E84C0047436C /* HomeViewController.swift */; };
-		8565216D2291EDD40047436C /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8565216C2291EDD40047436C /* SettingsViewController.storyboard */; };
 		856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8565216F2291EE750047436C /* AddMemberViewController.storyboard */; };
 		8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */; };
 		8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */; };
 		8580EE5C22BA7E1200E2407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5B22BA7E1200E2407D /* Images.xcassets */; };
+		85C4529422BA90430037363D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4529322BA90420037363D /* SettingsViewController.swift */; };
+		85C4529622BA90970037363D /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C4529522BA90970037363D /* SettingsViewController.storyboard */; };
+		85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4529722BA96A00037363D /* SettingsTableViewController.swift */; };
 		D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D385EF012291F4A300018550 /* MemberViewController.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -57,11 +59,13 @@
 		856521112288A75C0047436C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		856521672291E8160047436C /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		856521692291E84C0047436C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		8565216C2291EDD40047436C /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		8565216F2291EE750047436C /* AddMemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddMemberViewController.storyboard; sourceTree = "<group>"; };
 		8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunchViewController.storyboard; sourceTree = "<group>"; };
 		8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		8580EE5B22BA7E1200E2407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		85C4529322BA90420037363D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		85C4529522BA90970037363D /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		85C4529722BA96A00037363D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D385EF012291F4A300018550 /* MemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +163,9 @@
 		8565216B2291ED9B0047436C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				8565216C2291EDD40047436C /* SettingsViewController.storyboard */,
+				85C4529322BA90420037363D /* SettingsViewController.swift */,
+				85C4529522BA90970037363D /* SettingsViewController.storyboard */,
+				85C4529722BA96A00037363D /* SettingsTableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -298,9 +304,9 @@
 				856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */,
 				856520FA2288A75C0047436C /* LaunchScreen.storyboard in Resources */,
 				D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */,
-				8565216D2291EDD40047436C /* SettingsViewController.storyboard in Resources */,
 				8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */,
 				856520F72288A75C0047436C /* Assets.xcassets in Resources */,
+				85C4529622BA90970037363D /* SettingsViewController.storyboard in Resources */,
 				856520F22288A75B0047436C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +334,9 @@
 			files = (
 				8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */,
 				856520F52288A75B0047436C /* FamilyFirst.xcdatamodeld in Sources */,
+				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
+				85C4529422BA90430037363D /* SettingsViewController.swift in Sources */,
 				8565216A2291E84C0047436C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
