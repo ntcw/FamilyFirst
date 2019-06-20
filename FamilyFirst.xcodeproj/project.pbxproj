@@ -33,6 +33,7 @@
 		D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */; };
 		D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */; };
 		D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */; };
+		D3C111A422BBEBFD00E90738 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A322BBEBFD00E90738 /* DatePickerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
 		D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
 		D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberSubviewController.swift; sourceTree = "<group>"; };
+		D3C111A322BBEBFD00E90738 /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				8565216F2291EE750047436C /* AddMemberViewController.storyboard */,
+				D3C111A322BBEBFD00E90738 /* DatePickerCell.swift */,
 				D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */,
 				D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */,
 			);
@@ -399,6 +402,7 @@
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
 				85C4529422BA90430037363D /* SettingsViewController.swift in Sources */,
 				8565216A2291E84C0047436C /* HomeViewController.swift in Sources */,
+				D3C111A422BBEBFD00E90738 /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
