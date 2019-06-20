@@ -14,10 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-         UserDefaults.standard.set(false, forKey: "firstLaunch")
+        UserDefaults.standard.set(false, forKey: "firstLaunch")
+        
         if !UserDefaults.standard.bool(forKey: "firstLaunch") {
             
             
@@ -28,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             
-            let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
+            let storyboard = UIStoryboard(name: "main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
             window!.rootViewController = viewController
             

@@ -10,7 +10,10 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
+    @IBOutlet weak var changeNameButton: UIButton!
+    @IBOutlet weak var newNameTextField: UITextField!
     
+    @IBOutlet var changeNamePopOver: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,9 +22,22 @@ class SettingsTableViewController: UITableViewController {
     
     @IBAction func editNameButtonPressed(_ sender: UIButton) {
         
-       
-        
+       self.view.addSubview(changeNamePopOver)
+        changeNamePopOver.center = self.view.center
         
     }
+    @IBAction func saveNewName(_ sender: UIButton) {
+        
+        if !newNameTextField.text!.isEmpty {
+            
+             UserDefaults.standard.set(newNameTextField.text, forKey: "familyName")
+        }
+        
+        self.changeNamePopOver.removeFromSuperview()
+    }
+    
+    
+    
+    
     
 }

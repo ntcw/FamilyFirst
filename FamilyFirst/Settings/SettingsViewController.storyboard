@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBL-4W-4Vs">
-                                <rect key="frame" x="0.0" y="133" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="WSP-Cj-il1"/>
+                                    <constraint firstAttribute="height" constant="669" id="WSP-Cj-il1"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="ads-5u-eFb" kind="embed" id="SV1-bh-o1P"/>
@@ -31,55 +31,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z3G-WL-wl3" firstAttribute="trailing" secondItem="FBL-4W-4Vs" secondAttribute="trailing" id="cEK-Hm-Wsh"/>
-                            <constraint firstItem="FBL-4W-4Vs" firstAttribute="top" secondItem="z3G-WL-wl3" secondAttribute="top" constant="45" id="cQ2-7Q-uwO"/>
+                            <constraint firstItem="FBL-4W-4Vs" firstAttribute="top" secondItem="z3G-WL-wl3" secondAttribute="top" constant="56" id="cQ2-7Q-uwO"/>
                             <constraint firstItem="FBL-4W-4Vs" firstAttribute="leading" secondItem="z3G-WL-wl3" secondAttribute="leading" id="jE4-vd-UVq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z3G-WL-wl3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2IV-wM-HxG"/>
                     <navigationItem key="navigationItem" title="Settings" id="nAn-zu-cov"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="changeNameView" destination="2b7-YZ-Cz9" id="85W-AZ-Zl0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHj-bx-TQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="2b7-YZ-Cz9">
-                    <rect key="frame" x="0.0" y="0.0" width="291" height="182"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter new family name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-kK-LCi">
-                            <rect key="frame" x="49" y="36" width="193" height="23"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-Lx-owC">
-                            <rect key="frame" x="127" y="138" width="37" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <state key="normal" title="Done"/>
-                        </button>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JfV-bf-PCi">
-                            <rect key="frame" x="20" y="76" width="251" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <viewLayoutGuide key="safeArea" id="obS-sl-8an"/>
-                </view>
             </objects>
-            <point key="canvasLocation" x="908.69565217391312" y="14.732142857142856"/>
+            <point key="canvasLocation" x="1818.840579710145" y="14.732142857142856"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="meP-nC-awR">
             <objects>
                 <tableViewController storyboardIdentifier="SettingsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ads-5u-eFb" customClass="SettingsTableViewController" customModule="FamilyFirst" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="liC-lc-f8Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -140,16 +109,53 @@
                             <outlet property="delegate" destination="ads-5u-eFb" id="NEl-ed-WU8"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="changeNameButton" destination="h5t-ef-XQo" id="wM5-OI-0AT"/>
+                        <outlet property="changeNamePopOver" destination="jK8-iy-4eG" id="gaI-Sz-xRB"/>
+                        <outlet property="newNameTextField" destination="JfV-bf-PCi" id="1HG-WP-BNS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0f-NK-ne0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="jK8-iy-4eG">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="152"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter new family name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-kK-LCi">
+                            <rect key="frame" x="75" y="33" width="193" height="23"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JfV-bf-PCi">
+                            <rect key="frame" x="46" y="64" width="251" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-Lx-owC">
+                            <rect key="frame" x="153" y="102" width="37" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <state key="normal" title="Done"/>
+                            <connections>
+                                <action selector="saveNewName:" destination="ads-5u-eFb" eventType="touchUpInside" id="YPd-QA-FpO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="K0h-Wn-jld"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="1606" y="-77"/>
+            <point key="canvasLocation" x="2637.68115942029" y="14.397321428571427"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="fnd-hI-FB8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K3W-5L-dNt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="b21-hR-doj"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Rf-IK-tsz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -161,7 +167,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbF-Cq-iqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1.4492753623188408" y="14.732142857142856"/>
+            <point key="canvasLocation" x="908.69565217391312" y="14.732142857142856"/>
         </scene>
     </scenes>
 </document>
