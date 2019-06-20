@@ -54,7 +54,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Familie XYZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-mf-3rQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Familie " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-mf-3rQ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="FCN-2V-ntA"/>
@@ -122,6 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="dvR-NU-rcn"/>
                     <connections>
+                        <outlet property="FamilyLabel" destination="BR6-mf-3rQ" id="stp-Lc-IHB"/>
                         <outlet property="tableView" destination="M1X-EV-7eH" id="Oth-A3-4dD"/>
                         <segue destination="5QH-Z4-ypf" kind="show" identifier="toAddMember" id="Wv0-NW-J6N"/>
                     </connections>

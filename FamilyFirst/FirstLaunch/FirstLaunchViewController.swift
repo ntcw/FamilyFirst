@@ -20,7 +20,7 @@ class FirstLaunchViewController: UIViewController {
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
         
-        if (familyName.text?.isEmpty)! {
+        if !(familyName.text?.isEmpty)! {
     
         UserDefaults.standard.set(familyName.text, forKey: "familyName")
             

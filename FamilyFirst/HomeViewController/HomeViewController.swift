@@ -12,8 +12,10 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    var member = MemberClass.allMembers
+    var members = MemberClass.allMembers
+    let defaults = UserDefaults.standard
     
+    @IBOutlet weak var FamilyLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,16 +30,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        defaults.synchronize()
+        let familyname = defaults.object(forKey: "familyName") as! String
+        if familyname == "Meine Familie"{
+            FamilyLabel.text? = familyname
+        }else{
+            FamilyLabel.text?.append(familyname)
+        }
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return member.count()
+        return members.count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberCellTableViewCell
+        let member = members.getMember(at: indexPath.row)
+        cell.Name.text = member?.name ?? ""
         return cell
     }
     
