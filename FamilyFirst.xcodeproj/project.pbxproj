@@ -23,7 +23,10 @@
 		85C4529422BA90430037363D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4529322BA90420037363D /* SettingsViewController.swift */; };
 		85C4529622BA90970037363D /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85C4529522BA90970037363D /* SettingsViewController.storyboard */; };
 		85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4529722BA96A00037363D /* SettingsTableViewController.swift */; };
+		D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32124EF22BBC5E500A3DC1D /* AllMembers.swift */; };
+		D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */; };
 		D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D385EF012291F4A300018550 /* MemberViewController.storyboard */; };
+		D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +69,10 @@
 		85C4529322BA90420037363D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		85C4529522BA90970037363D /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		85C4529722BA96A00037363D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D32124EF22BBC5E500A3DC1D /* AllMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMembers.swift; sourceTree = "<group>"; };
+		D32124F122BBC5E500A3DC1D /* FamilyFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FamilyFirst.xcdatamodel; sourceTree = "<group>"; };
 		D385EF012291F4A300018550 /* MemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberViewController.storyboard; sourceTree = "<group>"; };
+		D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		856520EB2288A75B0047436C /* FamilyFirst */ = {
 			isa = PBXGroup;
 			children = (
+				D32124EE22BBC5E500A3DC1D /* Data */,
 				8580EE5622BA6EE200E2407D /* FirstLaunch */,
 				D385EF002291F48A00018550 /* Member */,
 				8565216E2291EE3B0047436C /* AddMember */,
@@ -154,6 +161,7 @@
 		856521662291E7CF0047436C /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */,
 				856521672291E8160047436C /* HomeViewController.storyboard */,
 				856521692291E84C0047436C /* HomeViewController.swift */,
 			);
@@ -185,6 +193,15 @@
 				8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */,
 			);
 			path = FirstLaunch;
+			sourceTree = "<group>";
+		};
+		D32124EE22BBC5E500A3DC1D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D32124EF22BBC5E500A3DC1D /* AllMembers.swift */,
+				D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D385EF002291F48A00018550 /* Member */ = {
@@ -333,6 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */,
+				D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */,
+				D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */,
+				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
 				856520F52288A75B0047436C /* FamilyFirst.xcdatamodeld in Sources */,
 				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
@@ -672,6 +692,16 @@
 				856520F42288A75B0047436C /* FamilyFirst.xcdatamodel */,
 			);
 			currentVersion = 856520F42288A75B0047436C /* FamilyFirst.xcdatamodel */;
+			path = FamilyFirst.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D32124F122BBC5E500A3DC1D /* FamilyFirst.xcdatamodel */,
+			);
+			currentVersion = D32124F122BBC5E500A3DC1D /* FamilyFirst.xcdatamodel */;
 			path = FamilyFirst.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
