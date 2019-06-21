@@ -57,12 +57,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="174.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bD0-U5-N6A">
+                                                <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bD0-U5-N6A">
                                                     <rect key="frame" x="20" y="24.5" width="126" height="126"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="126" id="AnF-se-9Lj"/>
                                                         <constraint firstAttribute="width" constant="126" id="H8q-f6-FjA"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="corner.radius">
+                                                            <integer key="value" value="63"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yn7-Wq-TJv">
                                                     <rect key="frame" x="170" y="67.5" width="224" height="40"/>
@@ -73,11 +79,20 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="given-name"/>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Picture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG4-3c-nJU">
+                                                    <rect key="frame" x="38" y="77" width="90" height="21"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yn7-Wq-TJv" firstAttribute="centerY" secondItem="Zxg-Nn-wEX" secondAttribute="centerY" id="55I-dr-4B7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="yn7-Wq-TJv" secondAttribute="trailing" id="9cV-vV-mwX"/>
+                                                <constraint firstItem="yn7-Wq-TJv" firstAttribute="leading" secondItem="UG4-3c-nJU" secondAttribute="trailing" constant="42" id="W5V-fx-QTB"/>
                                                 <constraint firstItem="bD0-U5-N6A" firstAttribute="leading" secondItem="Zxg-Nn-wEX" secondAttribute="leadingMargin" id="ayy-Qc-KUP"/>
+                                                <constraint firstItem="UG4-3c-nJU" firstAttribute="leading" secondItem="Zxg-Nn-wEX" secondAttribute="leadingMargin" constant="18" id="d3P-kD-Ig0"/>
+                                                <constraint firstItem="UG4-3c-nJU" firstAttribute="centerY" secondItem="Zxg-Nn-wEX" secondAttribute="centerY" id="qou-se-nR4"/>
                                                 <constraint firstItem="yn7-Wq-TJv" firstAttribute="leading" secondItem="bD0-U5-N6A" secondAttribute="trailing" constant="24" id="tRG-We-nw8"/>
                                                 <constraint firstItem="bD0-U5-N6A" firstAttribute="centerY" secondItem="Zxg-Nn-wEX" secondAttribute="centerY" id="ziG-hS-Qn4"/>
                                             </constraints>
@@ -142,7 +157,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="PictureLabel" destination="UG4-3c-nJU" id="2gh-Ub-6fY"/>
                         <outlet property="dateLabel" destination="gGz-Xd-ia0" id="N6x-XT-uL3"/>
+                        <outlet property="memberPhoto" destination="bD0-U5-N6A" id="cYN-6l-Vw9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiK-dG-TYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
