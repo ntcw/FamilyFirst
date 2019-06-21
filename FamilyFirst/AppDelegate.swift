@@ -18,21 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        UserDefaults.standard.set(false, forKey: "firstLaunch")
-        
+     
         if !UserDefaults.standard.bool(forKey: "firstLaunch") {
             
             
             let storyboard = UIStoryboard(name: "FirstLaunchViewController", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "FirstLaunchViewController")
             window!.rootViewController = viewController
-            UserDefaults.standard.set(false, forKey: "firstLaunch")
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
             
         } else {
             
-            let storyboard = UIStoryboard(name: "main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-            window!.rootViewController = viewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let tabBarController = self.window!.rootViewController as? UITabBarController {
+                tabBarController.selectedIndex = 0
+            }
+            
             
         }
         

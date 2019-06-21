@@ -17,7 +17,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhA-Lt-lLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-843" y="547"/>
+            <point key="canvasLocation" x="-860" y="558"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="JVS-xr-Bd2">
@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="-12" y="558"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--MainViewController-->
         <scene sceneID="5YO-M1-HC8">
             <objects>
-                <tabBarController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wa9-iW-WCo" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" title="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wa9-iW-WCo" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q2V-1Z-vl0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -282,11 +282,11 @@
             </objects>
             <point key="canvasLocation" x="2637.68115942029" y="14.397321428571427"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="fnd-hI-FB8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K3W-5L-dNt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="b21-hR-doj"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="b21-hR-doj"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Rf-IK-tsz">

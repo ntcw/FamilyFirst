@@ -320,9 +320,9 @@
 				856521682291E8160047436C /* HomeViewController.storyboard in Resources */,
 				856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */,
 				856520FA2288A75C0047436C /* LaunchScreen.storyboard in Resources */,
-				D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */,
 				8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */,
 				856520F72288A75C0047436C /* Assets.xcassets in Resources */,
+				D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */,
 				85C4529622BA90970037363D /* SettingsViewController.storyboard in Resources */,
 				856520F22288A75B0047436C /* Main.storyboard in Resources */,
 			);
