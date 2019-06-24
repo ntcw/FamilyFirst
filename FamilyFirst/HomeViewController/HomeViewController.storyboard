@@ -46,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="-20.289855072463769" y="154.6875"/>
         </scene>
-        <!--Title-->
+        <!--FamilyFirst-->
         <scene sceneID="Wem-2b-SJV">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="T8A-ep-xZ8" customClass="HomeViewController" customModule="FamilyFirst" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fAY-oJ-GEF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="dvR-NU-rcn"/>
+                    <navigationItem key="navigationItem" title="FamilyFirst" id="dvR-NU-rcn"/>
                     <connections>
                         <outlet property="FamilyLabel" destination="BR6-mf-3rQ" id="stp-Lc-IHB"/>
                         <outlet property="tableView" destination="M1X-EV-7eH" id="Oth-A3-4dD"/>

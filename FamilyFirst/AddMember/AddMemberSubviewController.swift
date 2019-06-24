@@ -5,21 +5,28 @@
 //  Created by Benedikt Langer on 20.06.19.
 //  Copyright © 2019 Niklas. All rights reserved.
 //
-
+import CoreData
 import UIKit
 
 class AddMemberSubviewController: UITableViewController{
     
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
-    
-    var newPhoto: UIImage?
+    var addStuff: [Additional] = []
+
+    var newPhoto: UIImage? {
+        didSet{
+            memberPhoto.image = self.newPhoto
+        }
+    }
     
     
     enum ImageSource {
         case photoLibrary
         case camera
     }
+    
+   
    
     @IBOutlet weak var PictureLabel: UILabel!
     @IBOutlet weak var memberPhoto: UIImageView!
@@ -39,11 +46,15 @@ class AddMemberSubviewController: UITableViewController{
         super.viewDidLoad()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        
         memberPhoto.isUserInteractionEnabled = true
         memberPhoto.addGestureRecognizer(tapGestureRecognizer)
-        if let imgview = memberPhoto.image {
-            PictureLabel.isEnabled = false
-        }
+        
+        tableView.register(UINib(nibName: "AdditionalCell", bundle: nil), forCellReuseIdentifier: "AdditionalCell")
+        
+//        if let imgview = memberPhoto.image {
+//            PictureLabel.isEnabled = false
+//        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,18 +66,39 @@ class AddMemberSubviewController: UITableViewController{
         }else if !datePickerHidden && indexPath.section == 0 && indexPath.row == 2{
             return 190
         }
-        else {
-            return 44
-        }
+        return 44
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 1 {
+        if indexPath.section == 0 && indexPath.row == 1 && datePickerHidden{
             setDate(pickerHidden: false)
         }else if indexPath.section == 0 && indexPath.row == 1 && !datePickerHidden{
             setDate(pickerHidden: true)
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdditionalCell") as! AdditionalCell
+            return cell
+        }
+        return super.tableView(tableView, cellForRowAt: indexPath)
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 3 {
+            return self.addStuff.count
+            //the datasource of the dynamic section
+        }
+        return super.tableView(tableView, numberOfRowsInSection: section)
+    }
+    
+    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        if indexPath.section == 3 {
+            let newIndexPath = IndexPath(row: 0, section: indexPath.section)
+            return super.tableView(tableView, indentationLevelForRowAt: newIndexPath)
+        }
+        return super.tableView(tableView, indentationLevelForRowAt: indexPath as IndexPath)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -86,18 +118,23 @@ class AddMemberSubviewController: UITableViewController{
     
     @IBAction func datePicker(_ sender: UIDatePicker) {
         
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MMMM/yyyy"
         dateLabel.text = dateFormatter.string(from: sender.date)
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         let tappedImage = tapGestureRecognizer.view as! UIImageView
+    
+        tappedImage.image = getImage()
+        PictureLabel.text = ""
+        tableView.reloadData()
         
-            memberPhoto.image = getImage()
-            PictureLabel.text = ""
         
-        
+    }
+    
+    
+    @IBAction func AddButton(_ sender: UIButton) {
     }
     
 }
@@ -170,8 +207,6 @@ extension AddMemberSubviewController: UIImagePickerControllerDelegate, UINavigat
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
+   
         
 }
