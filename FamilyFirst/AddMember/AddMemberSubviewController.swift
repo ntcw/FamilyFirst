@@ -57,6 +57,24 @@ class AddMemberSubviewController: UITableViewController{
 //        }
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let button = UIButton(type: .system)
+        button.setTitle("Close", for: .normal)
+        button.setTitleColor(.lightGray, for: .normal)
+        
+        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        
+        return button
+    }
+    
+    @objc func handleExpandClose(){
+        print("Trying to expand sections")
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 34
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0{
             return 175

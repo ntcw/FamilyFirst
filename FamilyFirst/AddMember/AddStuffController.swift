@@ -8,15 +8,47 @@
 
 import UIKit
 
-class AddStuffController: UIViewController {
+class AddStuffController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var titleTextfield: UITextField!
+    
+    @IBOutlet weak var button: UIButton!
+    
+    @IBOutlet weak var myTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.black.cgColor
+        
+        myTextView.text = "Insert Information"
+        myTextView.textColor = UIColor.lightGray
+        myTextView.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func titleTextAction(_ sender: UITextField) {
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Insert Information"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    @IBAction func Done(_ sender: UIButton) {
+        dismiss(animated: true
+        )
+    }
+    
     /*
     // MARK: - Navigation
 
