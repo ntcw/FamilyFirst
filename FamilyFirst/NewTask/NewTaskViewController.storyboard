@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CJu-aI-iqB">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NewTaskViewController-->
+        <scene sceneID="76a-Yv-G9R">
+            <objects>
+                <viewController title="NewTaskViewController" id="hND-gG-dF0" customClass="NewTaskViewController" customModule="FamilyFirst" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9yk-DC-7me">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new Task below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdX-WS-Kew">
+                                <rect key="frame" x="97.5" y="188" width="219.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new task" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-gd-AH7">
+                                <rect key="frame" x="20" y="315.5" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h3W-gd-AH7" firstAttribute="leading" secondItem="UX2-Uu-a14" secondAttribute="leading" constant="20" id="9pV-xX-bAV"/>
+                            <constraint firstItem="gdX-WS-Kew" firstAttribute="centerX" secondItem="9yk-DC-7me" secondAttribute="centerX" id="SG2-US-3yQ"/>
+                            <constraint firstItem="UX2-Uu-a14" firstAttribute="trailing" secondItem="h3W-gd-AH7" secondAttribute="trailing" constant="20" id="n7M-Y4-pdb"/>
+                            <constraint firstItem="gdX-WS-Kew" firstAttribute="top" secondItem="UX2-Uu-a14" secondAttribute="top" constant="100" id="so8-R2-pj1"/>
+                            <constraint firstItem="h3W-gd-AH7" firstAttribute="top" secondItem="gdX-WS-Kew" secondAttribute="bottom" constant="100" id="tfD-aX-I5g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UX2-Uu-a14"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lGE-mQ-YeK">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="nfl-d9-qwj">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="hND-gG-dF0" id="sJC-YF-ozb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="x5m-tu-JEA">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="hND-gG-dF0" id="9w7-zt-k7M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newTaskField" destination="h3W-gd-AH7" id="E84-TU-aTu"/>
+                        <outlet property="taskLabel" destination="gdX-WS-Kew" id="e2x-tw-ffI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8y5-TI-0Lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737.68115942028987" y="32.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zeb-dF-YjG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJu-aI-iqB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rEf-ah-pJ4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hND-gG-dF0" kind="relationship" relationship="rootViewController" id="v7u-qL-WDc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lL2-jq-wHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172.46376811594203" y="32.8125"/>
+        </scene>
+    </scenes>
+</document>
