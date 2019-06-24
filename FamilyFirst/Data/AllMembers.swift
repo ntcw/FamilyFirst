@@ -17,6 +17,14 @@ class MemberClass {
     
     let delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    let context: NSManagedObjectContext
+    
+    private init() {
+        
+        context = delegate.persistentContainer.viewContext
+        
+    }
+    
     
     func getMembers() ->[FamilyMember]{
         return members
@@ -32,6 +40,51 @@ class MemberClass {
         }
         return nil
     }
+    
+    
+    func save(name: String, date: Date){
+        
+        let member = FamilyMember(context: context)
+        member.birthday = date
+        member.name = name
+        
+        do {
+            try context.save()
+        }catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func loadMember() {
+        
+        let entity = NSFetchRequest<NSManagedObject>(entityName: "FamilyMember")
+        
+        do {
+            members = try context.fetch(entity) as! [FamilyMember]
+        }
+        catch let error as NSError {
+            
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteMember(member: FamilyMember) {
+        
+        do {
+            
+            context.delete(member)
+           
+            try context.save()
+            
+        } catch let error as NSError {
+            
+            print(error.localizedDescription)
+            
+        }
+        
+    }
+    
+    
     
     
     
