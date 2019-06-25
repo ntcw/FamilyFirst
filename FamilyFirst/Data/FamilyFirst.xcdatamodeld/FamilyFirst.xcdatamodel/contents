@@ -6,7 +6,7 @@
         <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FamilyMember" inverseName="newRelationship" inverseEntity="FamilyMember" syncable="YES"/>
     </entity>
     <entity name="FamilyMember" representedClassName="FamilyMember" syncable="YES" codeGenerationType="class">
-        <attribute name="addStuff" optional="YES" syncable="YES"/>
+        <attribute name="addStuff" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -17,9 +17,13 @@
         <attribute name="task" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+<<<<<<< HEAD
         <element name="FamilyMember" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Task" positionX="-63" positionY="9" width="128" height="75"/>
         <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="118"/>
+=======
+>>>>>>> added few functionalities
         <element name="Additional" positionX="-63" positionY="9" width="128" height="88"/>
+        <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="120"/>
     </elements>
 </model>

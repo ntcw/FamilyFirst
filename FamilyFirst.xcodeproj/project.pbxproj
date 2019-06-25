@@ -415,7 +415,6 @@
 				D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */,
 				D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */,
 				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
-				856520F52288A75B0047436C /* FamilyFirst.xcdatamodeld in Sources */,
 				D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */,
 				D34AED0D22C107BB00FD25F4 /* AdditionalCell.swift in Sources */,
 				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,
@@ -600,7 +599,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UJHZ7R572;
+				DEVELOPMENT_TEAM = MFV5357J8T;
 				INFOPLIST_FILE = FamilyFirst/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,7 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UJHZ7R572;
+				DEVELOPMENT_TEAM = MFV5357J8T;
 				INFOPLIST_FILE = FamilyFirst/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
