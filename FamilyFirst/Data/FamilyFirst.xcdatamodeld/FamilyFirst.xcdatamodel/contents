@@ -17,12 +17,9 @@
         <attribute name="task" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-<<<<<<< HEAD
         <element name="FamilyMember" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Task" positionX="-63" positionY="9" width="128" height="75"/>
         <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="118"/>
-=======
->>>>>>> added few functionalities
         <element name="Additional" positionX="-63" positionY="9" width="128" height="88"/>
         <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="120"/>
     </elements>
