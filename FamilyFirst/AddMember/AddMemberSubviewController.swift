@@ -25,7 +25,7 @@ class AddMemberSubviewController: UITableViewController{
         }
     }
     
-    let arr: [String] = []
+    let arr: [String] = ["hallo", "hallo2", "hallo3"]
     
     
     enum ImageSource {

@@ -18,25 +18,8 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="AdditionalCell" customModule="FamilyFirst" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-7s-mFs">
-                        <rect key="frame" x="16" y="11" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o1B-7s-mFs" secondAttribute="trailing" constant="50" id="A4l-Ir-in9"/>
-                    <constraint firstItem="o1B-7s-mFs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="W57-XC-DaR"/>
-                    <constraint firstAttribute="bottom" secondItem="o1B-7s-mFs" secondAttribute="bottom" constant="11.5" id="oAM-gN-dJ7"/>
-                    <constraint firstItem="o1B-7s-mFs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="wdM-aF-Fve"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="TitleLabel" destination="o1B-7s-mFs" id="2Zv-7l-dbt"/>
-            </connections>
             <point key="canvasLocation" x="47.826086956521742" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
