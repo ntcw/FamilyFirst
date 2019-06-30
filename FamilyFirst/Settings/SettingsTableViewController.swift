@@ -11,6 +11,7 @@ import CoreData
 
 
 class SettingsTableViewController: UITableViewController {
+    
     @IBOutlet var aboutLabel: UILabel!
     @IBOutlet var changeNameButton: UIButton!
     @IBOutlet var newNameTextField: UITextField!
@@ -24,16 +25,38 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var cancelClearData: UIButton!
     @IBOutlet var confirmClearData: UIButton!
     let blackView = UIView()
+    let greyBackground = UIColor(displayP3Red: 203.0, green: 207.0, blue: 212.0, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.tableFooterView = UIView()
         aboutLabel.numberOfLines = 2
-        aboutLabel.text = "FamilyFirst: Version 1.0 by Benedikt Langer and Niklas Wagner"
-        changeNamePopOver.layer.cornerRadius = 10
-        clearDataPopOver.layer.cornerRadius = 10
-        aboutPopOver.layer.cornerRadius = 10
+        aboutLabel.text = "FamilyFirst: Version 1.0 by Benedikt Langer \nand Niklas Wagner"
+       
+        
+        settingsTableView.layer.cornerRadius = 15
+        changeNamePopOver.layer.cornerRadius = 45
+        clearDataPopOver.backgroundColor = greyBackground
+        aboutPopOver.backgroundColor = greyBackground
+        clearDataPopOver.layer.cornerRadius = 45
+        aboutPopOver.layer.cornerRadius = 45
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(displayP3Red: 194.0, green: 201.0, blue: 204.0, alpha: 0.3)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
+    }
+    
+    
 
     // Edit family name:
 
@@ -42,8 +65,8 @@ class SettingsTableViewController: UITableViewController {
             getBlackBackground()
 
             window.addSubview(changeNamePopOver)
-            changeNamePopOver.center = view.center
-            changeNamePopOver.backgroundColor = UIColor.white
+            changeNamePopOver.center = settingsTableView.center
+            
 
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
@@ -67,8 +90,8 @@ class SettingsTableViewController: UITableViewController {
         if let window = UIApplication.shared.keyWindow {
             getBlackBackground()
             window.addSubview(clearDataPopOver)
-            clearDataPopOver.center = view.center
-            clearDataPopOver.backgroundColor = UIColor.white
+            clearDataPopOver.center = settingsTableView.center
+           
 
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
@@ -118,9 +141,9 @@ class SettingsTableViewController: UITableViewController {
             getBlackBackground()
 
             window.addSubview(aboutPopOver)
-            aboutPopOver.center = view.center
-            aboutPopOver.backgroundColor = UIColor.white
-
+            aboutPopOver.center = settingsTableView.center
+          
+            
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
             }, completion: nil)

@@ -23,6 +23,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
             toDoTableView.delegate = self
             toDoTableView.dataSource = self
             toDoTableView.tableFooterView = UIView()
+           self.view.backgroundColor = UIColor(patternImage: UIImage(named:"multi")!)
         }
         
         override func viewWillAppear(_ animated: Bool) {

@@ -12,7 +12,13 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     
-    @IBOutlet var changeNameView: UIView!
+    @IBOutlet var settingsViewController: UIView!
+    @IBOutlet weak var settingsView: UIView!
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"multi")!)
+        settingsView.center = settingsViewController.center
+    }
     
     
 }
