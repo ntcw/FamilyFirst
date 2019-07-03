@@ -8,8 +8,14 @@
 import CoreData
 import UIKit
 
-class AddMemberSubviewController: UITableViewController{
+class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
+    
+    @IBOutlet var vaccinationView: UIView!
+    @IBOutlet weak var vaccinationTextview: UITextView!
+    @IBOutlet weak var allergiesField: UITextView!
+    @IBOutlet var allergiesPopover: UIView!
+    let blackView = UIView()
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
     var addStuff: [Additional] = []
@@ -47,7 +53,12 @@ class AddMemberSubviewController: UITableViewController{
         tableView.delegate = self
         
         
+
+        
+        
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +73,22 @@ class AddMemberSubviewController: UITableViewController{
 //        if let imgview = memberPhoto.image {
 //            PictureLabel.isEnabled = false
 //        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.darkGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+            textView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            if 
+            textView.textColor = UIColor.darkGray
+            textView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -149,6 +176,10 @@ class AddMemberSubviewController: UITableViewController{
             setDate(pickerHidden: false)
         }else if indexPath.section == 0 && indexPath.row == 1 && !datePickerHidden{
             setDate(pickerHidden: true)
+        }else if indexPath.section == 1 && indexPath.row == 2 {
+            getPopover(popOver: allergiesPopover)
+        }else if indexPath.section == 1 && indexPath.row == 3 {
+            getPopover(popOver: vaccinationView)
         }
         
     }
@@ -183,6 +214,39 @@ class AddMemberSubviewController: UITableViewController{
             datePickerHidden = true
             tableView.reloadData()
         }
+    }
+    
+    
+    func getPopover(popOver: UIView){
+        if let window = UIApplication.shared.keyWindow{
+            getBlackBackground()
+            window.addSubview(popOver)
+            popOver.backgroundColor = .white
+            popOver.center = view.center
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.blackView.alpha = 1
+            }, completion: nil)
+            
+        }
+    }
+    
+    func getBlackBackground() {
+        if let window = UIApplication.shared.keyWindow {
+            blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            blackView.frame = window.frame
+            blackView.alpha = 0
+            blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+            window.addSubview(blackView)
+        }
+    }
+    
+    // exist pop over view by touching outside of the pop over view:
+    @objc func handleDismiss() {
+        UIView.animate(withDuration: 0.5) {
+            self.blackView.alpha = 0
+        }
+        allergiesPopover.removeFromSuperview()
     }
     
     
@@ -231,6 +295,20 @@ class AddMemberSubviewController: UITableViewController{
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
+    @IBAction func addAllergy(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5) {
+            self.blackView.alpha = 0
+        }
+        allergiesPopover.removeFromSuperview()
+    }
+    @IBAction func addVaccination(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5) {
+            self.blackView.alpha = 0
+        }
+        vaccinationView.removeFromSuperview()
+    }
+    
     
 }
 
