@@ -15,13 +15,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var members = MemberClass.allMembers
     let defaults = UserDefaults.standard
     
-    @IBOutlet weak var FamilyLabel: UILabel!
+    @IBOutlet weak var familyLabel: UILabel!
+    
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        defaults.synchronize()
+        let familyname = defaults.object(forKey: "familyName") as! String
+        familyLabel.text = familyname
         tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,13 +34,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        defaults.synchronize()
-        let familyname = defaults.object(forKey: "familyName") as! String
-        if familyname == "Meine Familie"{
-            FamilyLabel.text? = familyname
-        }else{
-            FamilyLabel.text?.append(familyname)
-        }
     }
     
     

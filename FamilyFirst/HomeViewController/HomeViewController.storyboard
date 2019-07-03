@@ -122,7 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="FamilyFirst" id="dvR-NU-rcn"/>
                     <connections>
-                        <outlet property="FamilyLabel" destination="BR6-mf-3rQ" id="stp-Lc-IHB"/>
+                        <outlet property="familyLabel" destination="BR6-mf-3rQ" id="JaC-0F-J98"/>
                         <outlet property="tableView" destination="M1X-EV-7eH" id="Oth-A3-4dD"/>
                         <segue destination="5QH-Z4-ypf" kind="show" identifier="toAddMember" id="Wv0-NW-J6N"/>
                     </connections>
