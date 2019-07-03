@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="1813" y="253"/>
         </scene>
-        <!--Home-->
+        <!--Family-->
         <scene sceneID="TF7-RW-HeI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jE9-Pm-iVF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="familyicon" id="UBt-ir-GW5"/>
+                    <tabBarItem key="tabBarItem" title="Family" image="family-silhouette" id="UBt-ir-GW5"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pze-aM-r6N">
@@ -133,6 +133,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="familyicon" width="16" height="16"/>
+        <image name="family-silhouette" width="32" height="32"/>
     </resources>
 </document>

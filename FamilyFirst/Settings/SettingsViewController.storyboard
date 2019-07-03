@@ -71,9 +71,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-ef-XQo">
-                                                    <rect key="frame" x="329" y="0.0" width="30" height="64.5"/>
-                                                    <state key="normal" title="Edit"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-ef-XQo">
+                                                    <rect key="frame" x="335" y="0.0" width="24" height="64.5"/>
+                                                    <state key="normal" image="edit"/>
                                                     <connections>
                                                         <action selector="editNameButtonPressed:" destination="ads-5u-eFb" eventType="touchUpInside" id="jYm-SX-Dmb"/>
                                                     </connections>
@@ -362,6 +362,7 @@
     <resources>
         <image name="cancel" width="29" height="29"/>
         <image name="confirm-1" width="29" height="29"/>
+        <image name="edit" width="24" height="24"/>
         <image name="settings-2" width="29" height="29"/>
         <image name="trash" width="29" height="29"/>
     </resources>
