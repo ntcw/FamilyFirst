@@ -53,9 +53,22 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         tableView.delegate = self
         
         
+        setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
+        setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
+        
+        
+    }
+    
+    func setTextView(textView: UITextView, placeHolder: String){
+        textView.text = placeHolder
+        textView.textColor = UIColor.darkGray
+//        TextView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
+        textView.delegate = self
+        textView.layer.borderWidth = 0.5
+        textView.layer.borderColor = UIColor.lightGray.cgColor
+        textView.layer.cornerRadius = 5
+        textView.layer.backgroundColor = UIColor(displayP3Red: 194, green: 201, blue: 204, alpha: 0.3).cgColor
 
-        
-        
     }
     
     
@@ -85,7 +98,11 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            if 
+            if textView.restorationIdentifier == "vaccinationView"{
+                textView.text = "Insert Vaccination"
+            }else {
+                textView.text = "Insert Allergy"
+            }
             textView.textColor = UIColor.darkGray
             textView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
         }

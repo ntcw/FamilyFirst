@@ -349,7 +349,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owx-jT-EQq">
-                                                    <rect key="frame" x="20" y="11.5" width="54" height="21"/>
+                                                    <rect key="frame" x="8" y="11.5" width="54" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="54" id="89u-71-r3N"/>
                                                     </constraints>
@@ -358,7 +358,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hiz-xk-8Gq">
-                                                    <rect key="frame" x="164" y="7" width="230" height="30"/>
+                                                    <rect key="frame" x="176" y="7" width="230" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="230" id="weo-K6-rDH"/>
                                                     </constraints>
@@ -909,7 +909,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiK-dG-TYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="epM-RP-YL3">
+                <view contentMode="scaleToFill" restorationIdentifier="vaccinationView" id="epM-RP-YL3">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -923,8 +923,7 @@
                             <rect key="frame" x="180" y="166" width="40" height="30"/>
                             <state key="normal" title="Done"/>
                             <connections>
-                                <action selector="addAllergy:" destination="wQr-Tz-J4G" eventType="touchUpInside" id="fkP-lU-5co"/>
-                                <action selector="addVacination:" destination="wQr-Tz-J4G" eventType="touchUpInside" id="Vls-IJ-blr"/>
+                                <action selector="addVaccination:" destination="wQr-Tz-J4G" eventType="touchUpInside" id="WnU-8K-iXH"/>
                             </connections>
                         </button>
                     </subviews>
@@ -940,7 +939,7 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="6pX-RQ-Fqr"/>
                 </view>
-                <view contentMode="scaleToFill" id="JOH-8n-JxH">
+                <view contentMode="scaleToFill" restorationIdentifier="allergyView" id="JOH-8n-JxH">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
