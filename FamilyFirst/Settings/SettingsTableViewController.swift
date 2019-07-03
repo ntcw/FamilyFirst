@@ -106,6 +106,8 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func confirmClearButtonPressed(_ sender: UIButton) {
       
         deleteAllData(entity: "FamilyMember")
+        deleteAllData(entity: "Task")
+        deleteAllData(entity: "Additional")
 
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
@@ -114,22 +116,24 @@ class SettingsTableViewController: UITableViewController {
     }
 
     func deleteAllData(entity: String) {
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FamilyMember")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         fetchRequest.returnsObjectsAsFaults = false
-
-        do {
+        
+        do
+        {
             let results = try managedContext.fetch(fetchRequest)
-            for managedObject in results {
-                let managedObjectData: NSManagedObject = managedObject
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
                 managedContext.delete(managedObjectData)
             }
         } catch let error as NSError {
             print("Delete all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
+
 
     @IBAction func cancelClearButtonPressed(_ sender: UIButton) {
         UIView.animate(withDuration: 0.5) {
