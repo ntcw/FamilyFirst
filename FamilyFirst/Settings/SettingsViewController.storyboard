@@ -112,9 +112,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-vJ-8a3">
-                                                    <rect key="frame" x="323" y="0.0" width="36" height="64.5"/>
-                                                    <state key="normal" title="Clear"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-vJ-8a3">
+                                                    <rect key="frame" x="330" y="0.0" width="29" height="64.5"/>
+                                                    <state key="normal" image="trash"/>
                                                     <connections>
                                                         <action selector="clearButtonPressed:" destination="ads-5u-eFb" eventType="touchUpInside" id="bCk-l2-ybM"/>
                                                     </connections>
@@ -187,10 +187,13 @@
                     <connections>
                         <outlet property="aboutLabel" destination="PaJ-bV-hch" id="wVL-am-hC3"/>
                         <outlet property="aboutPopOver" destination="UBS-42-TCv" id="R4A-Vj-caZ"/>
+                        <outlet property="aboutText" destination="PaJ-bV-hch" id="G4m-E3-VwC"/>
                         <outlet property="cancelClearData" destination="iJO-ss-fNH" id="jou-bH-U1h"/>
                         <outlet property="changeNameButton" destination="h5t-ef-XQo" id="wM5-OI-0AT"/>
                         <outlet property="changeNamePopOver" destination="jK8-iy-4eG" id="gaI-Sz-xRB"/>
                         <outlet property="clearDataPopOver" destination="MtX-iJ-rsu" id="ch6-39-XUf"/>
+                        <outlet property="clearText1" destination="4Uu-Sw-RAk" id="OSz-bd-JRX"/>
+                        <outlet property="clearText2" destination="Omh-Cc-HaK" id="6uQ-JX-7wJ"/>
                         <outlet property="confirmClearData" destination="hV4-g7-sjJ" id="5RJ-xT-2MB"/>
                         <outlet property="newNameTextField" destination="JfV-bf-PCi" id="1HG-WP-BNS"/>
                         <outlet property="settingsTableView" destination="liC-lc-f8Z" id="7iF-bs-Oxo"/>
@@ -201,17 +204,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="380" height="215"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaJ-bV-hch">
-                            <rect key="frame" x="20" y="78" width="360" height="75"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaJ-bV-hch">
+                            <rect key="frame" x="20" y="61" width="340" height="92"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Label">
+                                    <attributes>
+                                        <font key="NSFont" size="16" name="KohinoorTelugu-Medium"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="PaJ-bV-hch" firstAttribute="centerY" secondItem="UBS-42-TCv" secondAttribute="centerY" constant="8" id="0WZ-Dp-Dgc"/>
-                        <constraint firstItem="TOd-Nv-jhG" firstAttribute="trailing" secondItem="PaJ-bV-hch" secondAttribute="trailing" id="Vd8-nc-Wty"/>
+                        <constraint firstItem="PaJ-bV-hch" firstAttribute="centerY" secondItem="UBS-42-TCv" secondAttribute="centerY" constant="-0.5" id="0WZ-Dp-Dgc"/>
+                        <constraint firstItem="PaJ-bV-hch" firstAttribute="top" secondItem="TOd-Nv-jhG" secondAttribute="top" constant="17" id="Ntl-ig-i1d"/>
+                        <constraint firstItem="TOd-Nv-jhG" firstAttribute="trailing" secondItem="PaJ-bV-hch" secondAttribute="trailing" constant="20" id="Vd8-nc-Wty"/>
                         <constraint firstItem="PaJ-bV-hch" firstAttribute="leading" secondItem="TOd-Nv-jhG" secondAttribute="leading" constant="20" id="W2V-RJ-UxV"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="TOd-Nv-jhG"/>
@@ -227,36 +237,48 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to clear all data?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uu-Sw-RAk">
-                            <rect key="frame" x="10" y="94" width="360" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uu-Sw-RAk">
+                            <rect key="frame" x="10" y="94" width="360" height="14"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Are you sure you want to clear all data?">
+                                    <attributes>
+                                        <font key="NSFont" size="10" name="KohinoorTelugu-Medium"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be careful, this process cannot be undone." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omh-Cc-HaK">
-                            <rect key="frame" x="10" y="147" width="360" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omh-Cc-HaK">
+                            <rect key="frame" x="10" y="140" width="360" height="14"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Be careful, this process cannot be undone.">
+                                    <attributes>
+                                        <font key="NSFont" size="10" name="KohinoorTelugu-Medium"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-ss-fNH">
-                            <rect key="frame" x="275" y="193" width="55" height="55"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-ss-fNH">
+                            <rect key="frame" x="275" y="174" width="55" height="55"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="5kD-Rw-4e3"/>
                                 <constraint firstAttribute="height" constant="55" id="cVf-wa-BwY"/>
                             </constraints>
-                            <state key="normal" title="Cancel"/>
+                            <state key="normal" image="cancel"/>
                             <connections>
                                 <action selector="cancelClearButtonPressed:" destination="ads-5u-eFb" eventType="touchUpInside" id="2AE-6a-LNQ"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV4-g7-sjJ">
-                            <rect key="frame" x="50" y="193" width="55" height="55"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV4-g7-sjJ">
+                            <rect key="frame" x="50" y="174" width="55" height="55"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="9i2-ty-fMc"/>
                                 <constraint firstAttribute="height" constant="55" id="Q96-Sc-1df"/>
                             </constraints>
-                            <state key="normal" title="Confirm"/>
+                            <state key="normal" image="confirm-1"/>
                             <connections>
                                 <action selector="confirmClearButtonPressed:" destination="ads-5u-eFb" eventType="touchUpInside" id="clY-Cb-4nO"/>
                             </connections>
@@ -264,7 +286,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="iJO-ss-fNH" firstAttribute="top" secondItem="Omh-Cc-HaK" secondAttribute="bottom" constant="25" id="7tN-15-nW0"/>
+                        <constraint firstItem="iJO-ss-fNH" firstAttribute="top" secondItem="Omh-Cc-HaK" secondAttribute="bottom" constant="20" id="7tN-15-nW0"/>
                         <constraint firstItem="Tkd-UV-HIW" firstAttribute="trailing" secondItem="4Uu-Sw-RAk" secondAttribute="trailing" constant="10" id="PT3-lO-s3l"/>
                         <constraint firstItem="hV4-g7-sjJ" firstAttribute="leading" secondItem="Tkd-UV-HIW" secondAttribute="leading" constant="50" id="Xon-Vv-ZQP"/>
                         <constraint firstItem="Omh-Cc-HaK" firstAttribute="leading" secondItem="Tkd-UV-HIW" secondAttribute="leading" constant="10" id="acD-Wj-juE"/>
@@ -273,7 +295,7 @@
                         <constraint firstItem="4Uu-Sw-RAk" firstAttribute="leading" secondItem="Tkd-UV-HIW" secondAttribute="leading" constant="10" id="iTi-9P-Raw"/>
                         <constraint firstItem="Tkd-UV-HIW" firstAttribute="trailing" secondItem="iJO-ss-fNH" secondAttribute="trailing" constant="50" id="iZM-w9-umU"/>
                         <constraint firstItem="Tkd-UV-HIW" firstAttribute="trailing" secondItem="Omh-Cc-HaK" secondAttribute="trailing" constant="10" id="ih3-fo-9NH"/>
-                        <constraint firstItem="hV4-g7-sjJ" firstAttribute="top" secondItem="Omh-Cc-HaK" secondAttribute="bottom" constant="25" id="wUk-5Q-rjp"/>
+                        <constraint firstItem="hV4-g7-sjJ" firstAttribute="top" secondItem="Omh-Cc-HaK" secondAttribute="bottom" constant="20" id="wUk-5Q-rjp"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Tkd-UV-HIW"/>
                 </view>
@@ -281,10 +303,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="380" height="215"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-Lx-owC">
-                            <rect key="frame" x="153" y="127" width="74" height="58"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-Lx-owC">
+                            <rect key="frame" x="177" y="142" width="29" height="29"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <state key="normal" title="Done"/>
+                            <state key="normal" image="confirm-1"/>
                             <connections>
                                 <action selector="saveNewName:" destination="ads-5u-eFb" eventType="touchUpInside" id="YPd-QA-FpO"/>
                             </connections>
@@ -296,11 +318,17 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter new family name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-kK-LCi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-kK-LCi">
                             <rect key="frame" x="75" y="44" width="230" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <nil key="textColor"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Enter new family name">
+                                    <attributes>
+                                        <font key="NSFont" size="18" name="KohinoorTelugu-Medium"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -314,7 +342,7 @@
         <scene sceneID="fnd-hI-FB8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K3W-5L-dNt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="b21-hR-doj"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-2" id="b21-hR-doj"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Rf-IK-tsz">
@@ -331,4 +359,11 @@
             <point key="canvasLocation" x="223" y="14"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel" width="29" height="29"/>
+        <image name="confirm-1" width="29" height="29"/>
+        <image name="settings-2" width="29" height="29"/>
+        <image name="trash" width="29" height="29"/>
+    </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

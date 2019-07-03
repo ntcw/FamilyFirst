@@ -14,6 +14,7 @@ class FirstLaunchViewController: UIViewController {
     
     override func viewDidLoad() {
             super.viewDidLoad()
+            setupKeyboardDismiss()
       
         }
     
@@ -31,6 +32,18 @@ class FirstLaunchViewController: UIViewController {
         
         
     }
+    
+    func setupKeyboardDismiss() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     
     
     

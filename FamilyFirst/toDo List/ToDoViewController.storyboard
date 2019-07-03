@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-qu-9cq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="15" y="44" width="384" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" rowHeight="75" id="tmu-sP-w5a" customClass="TaskTableViewCell" customModule="FamilyFirst" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="28" width="384" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tmu-sP-w5a" id="RR6-aG-soX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-6k-Npx">
@@ -55,14 +55,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wfd-BY-PYp" firstAttribute="trailing" secondItem="JWO-qu-9cq" secondAttribute="trailing" id="CsB-ex-3wh"/>
-                            <constraint firstItem="JWO-qu-9cq" firstAttribute="leading" secondItem="wfd-BY-PYp" secondAttribute="leading" id="Th9-BH-hhW"/>
+                            <constraint firstItem="wfd-BY-PYp" firstAttribute="trailing" secondItem="JWO-qu-9cq" secondAttribute="trailing" constant="15" id="CsB-ex-3wh"/>
+                            <constraint firstItem="JWO-qu-9cq" firstAttribute="leading" secondItem="wfd-BY-PYp" secondAttribute="leading" constant="15" id="Th9-BH-hhW"/>
                             <constraint firstAttribute="bottom" secondItem="JWO-qu-9cq" secondAttribute="bottom" constant="34" id="YMB-x7-F3z"/>
                             <constraint firstItem="JWO-qu-9cq" firstAttribute="top" secondItem="fIp-oL-GBL" secondAttribute="top" constant="44" id="ehB-MX-lbc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wfd-BY-PYp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Family To-do list" id="jBe-Jp-hRq">
+                    <navigationItem key="navigationItem" title="Family ToDo list" id="jBe-Jp-hRq">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="lsu-C7-8Kh">
                             <connections>
                                 <segue destination="erD-n4-Bmu" kind="presentation" id="rax-eS-9dk"/>
@@ -89,7 +89,7 @@
         <scene sceneID="6u4-Y1-7qP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1CP-Cm-A9k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="toDo" id="X2U-c0-4lf"/>
+                    <tabBarItem key="tabBarItem" title="toDo" image="list" id="X2U-c0-4lf"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="axH-S5-vfq">
@@ -106,4 +106,8 @@
             <point key="canvasLocation" x="353.62318840579712" y="146.65178571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list" width="29" height="29"/>
+    </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

@@ -17,7 +17,8 @@ class NewTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"multi")!)
+       
         if let task = task {
             taskLabel.text = task.task
             newTaskField.placeholder = task.task?.isEmpty == true ? "Enter new task" : "Change task"

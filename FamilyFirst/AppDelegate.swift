@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
           UserDefaults.standard.set(false, forKey: "firstLaunch")
      
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "OriyaSangamMN", size: 18)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+         UILabel.appearance().font = UIFont(name: "KohinoorTelugu-Medium" , size: 20)
+        
         if !UserDefaults.standard.bool(forKey: "firstLaunch") {
             
             

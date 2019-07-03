@@ -21,7 +21,10 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var clearDataPopOver: UIView!
     @IBOutlet var aboutButton: UIButton!
     @IBOutlet var aboutPopOver: UIView!
-
+    @IBOutlet weak var clearText1: UILabel!
+    @IBOutlet weak var clearText2: UILabel!
+    @IBOutlet weak var aboutText: UILabel!
+    
     @IBOutlet var cancelClearData: UIButton!
     @IBOutlet var confirmClearData: UIButton!
     let blackView = UIView()
@@ -31,15 +34,18 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         settingsTableView.tableFooterView = UIView()
         aboutLabel.numberOfLines = 2
-        aboutLabel.text = "FamilyFirst: Version 1.0 by Benedikt Langer \nand Niklas Wagner"
+        aboutLabel.text = "FamilyFirst: Version 1.0 by \nBenedikt Langer and Niklas Wagner"
        
-        
+
         settingsTableView.layer.cornerRadius = 15
         changeNamePopOver.layer.cornerRadius = 45
         clearDataPopOver.backgroundColor = greyBackground
         aboutPopOver.backgroundColor = greyBackground
         clearDataPopOver.layer.cornerRadius = 45
         aboutPopOver.layer.cornerRadius = 45
+        clearText1.font = UIFont(name: "KohinoorTelugu-Medium", size: 17)
+        clearText2.font = UIFont(name: "KohinoorTelugu-Medium", size: 17)
+        aboutText.font = UIFont(name: "KohinoorTelugu-Medium", size: 18)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -65,9 +71,7 @@ class SettingsTableViewController: UITableViewController {
             getBlackBackground()
 
             window.addSubview(changeNamePopOver)
-            changeNamePopOver.center = settingsTableView.center
-            
-
+            changeNamePopOver.center = window.center
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
             }, completion: nil)
@@ -90,7 +94,7 @@ class SettingsTableViewController: UITableViewController {
         if let window = UIApplication.shared.keyWindow {
             getBlackBackground()
             window.addSubview(clearDataPopOver)
-            clearDataPopOver.center = settingsTableView.center
+            clearDataPopOver.center = window.center
            
 
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -141,7 +145,7 @@ class SettingsTableViewController: UITableViewController {
             getBlackBackground()
 
             window.addSubview(aboutPopOver)
-            aboutPopOver.center = settingsTableView.center
+            aboutPopOver.center = window.center
           
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
