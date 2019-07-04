@@ -38,6 +38,8 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nI9-3K-ymO">
                                 <rect key="frame" x="178" y="674" width="59" height="60"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0LR-7y-fD1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="DKQ-GF-2Kj"/>
                                     <constraint firstAttribute="height" constant="60" id="EGL-jS-pRe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
@@ -73,7 +75,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="nI9-3K-ymO" secondAttribute="trailing" constant="177" id="4kF-gG-6jl"/>
                             <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="Mgq-qp-iWz" secondAttribute="trailing" constant="94" id="8NS-0B-egQ"/>
                             <constraint firstItem="nI9-3K-ymO" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="178" id="CcY-jT-zi8"/>
                             <constraint firstItem="Ftx-Ws-uQD" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="64" id="HKc-w7-VCd"/>

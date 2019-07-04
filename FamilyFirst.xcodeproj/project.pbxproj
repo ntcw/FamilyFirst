@@ -21,6 +21,7 @@
 		856521682291E8160047436C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856521672291E8160047436C /* HomeViewController.storyboard */; };
 		8565216A2291E84C0047436C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856521692291E84C0047436C /* HomeViewController.swift */; };
 		856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8565216F2291EE750047436C /* AddMemberViewController.storyboard */; };
+		8575B09522CE0D1D002E9C58 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575B09422CE0D1D002E9C58 /* UIColorExtension.swift */; };
 		8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */; };
 		8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */; };
 		8580EE5C22BA7E1200E2407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5B22BA7E1200E2407D /* Images.xcassets */; };
@@ -77,6 +78,7 @@
 		856521672291E8160047436C /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		856521692291E84C0047436C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8565216F2291EE750047436C /* AddMemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddMemberViewController.storyboard; sourceTree = "<group>"; };
+		8575B09422CE0D1D002E9C58 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunchViewController.storyboard; sourceTree = "<group>"; };
 		8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		8580EE5B22BA7E1200E2407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				8565216B2291ED9B0047436C /* Settings */,
 				856521662291E7CF0047436C /* HomeViewController */,
 				856520EC2288A75B0047436C /* AppDelegate.swift */,
+				8575B09322CE0D04002E9C58 /* Extensions */,
 				856520F62288A75C0047436C /* Assets.xcassets */,
 				856520F82288A75C0047436C /* LaunchScreen.storyboard */,
 				856520FB2288A75C0047436C /* Info.plist */,
@@ -221,6 +224,14 @@
 				D34AED0C22C107BB00FD25F4 /* AdditionalCell.xib */,
 			);
 			path = AddMember;
+			sourceTree = "<group>";
+		};
+		8575B09322CE0D04002E9C58 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8575B09422CE0D1D002E9C58 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8580EE5622BA6EE200E2407D /* FirstLaunch */ = {
@@ -407,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8575B09522CE0D1D002E9C58 /* UIColorExtension.swift in Sources */,
 				852CD43E22C0F248002EB998 /* ToDoViewController.swift in Sources */,
 				8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */,
 				853BF15022BCD1B500A73946 /* TaskTableViewCell.swift in Sources */,
