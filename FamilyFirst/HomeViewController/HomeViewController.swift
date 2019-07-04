@@ -31,10 +31,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
     }
     
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"multi")!)
+        tableView.backgroundColor = UIColor.clear
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
