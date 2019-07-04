@@ -10,13 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MemberViewController-->
-        <scene sceneID="jNp-FP-ppr">
+        <!--DetailsViewController-->
+        <scene sceneID="psM-5j-3Jd">
             <objects>
-                <viewControllerPlaceholder storyboardName="MemberViewController" id="7IH-HJ-UYV" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WD4-02-EaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="DetailsViewController" storyboardName="DetailsViewController" id="1rO-xz-1A4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Jg-vb-Kig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837" y="53"/>
+            <point key="canvasLocation" x="1802" y="33"/>
         </scene>
         <!--AddMemberViewController-->
         <scene sceneID="IFt-xP-ikd">
@@ -109,7 +109,6 @@
                                         <connections>
                                             <outlet property="Name" destination="O9z-iI-hiq" id="h9j-D1-29d"/>
                                             <outlet property="memberPicture" destination="hxa-a3-f0Y" id="nZ1-eQ-wce"/>
-                                            <segue destination="7IH-HJ-UYV" kind="presentation" trigger="accessoryAction" id="FjE-hn-9gK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -132,6 +131,7 @@
                         <outlet property="familyLabel" destination="BR6-mf-3rQ" id="JaC-0F-J98"/>
                         <outlet property="tableView" destination="M1X-EV-7eH" id="Oth-A3-4dD"/>
                         <segue destination="5QH-Z4-ypf" kind="show" identifier="toAddMember" id="Wv0-NW-J6N"/>
+                        <segue destination="1rO-xz-1A4" kind="show" identifier="detailsSegue" id="duG-FT-78K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agq-79-CcW" userLabel="First Responder" sceneMemberID="firstResponder"/>

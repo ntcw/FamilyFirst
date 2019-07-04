@@ -22,6 +22,8 @@
 		8565216A2291E84C0047436C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856521692291E84C0047436C /* HomeViewController.swift */; };
 		856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8565216F2291EE750047436C /* AddMemberViewController.storyboard */; };
 		8575B09522CE0D1D002E9C58 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575B09422CE0D1D002E9C58 /* UIColorExtension.swift */; };
+		8575B09822CE3D03002E9C58 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8575B09722CE3D03002E9C58 /* DetailsViewController.storyboard */; };
+		8575B09A22CE3D14002E9C58 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575B09922CE3D14002E9C58 /* DetailsViewController.swift */; };
 		8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */; };
 		8580EE5A22BA6F6E00E2407D /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */; };
 		8580EE5C22BA7E1200E2407D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8580EE5B22BA7E1200E2407D /* Images.xcassets */; };
@@ -33,7 +35,6 @@
 		D34AED0D22C107BB00FD25F4 /* AdditionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34AED0B22C107BB00FD25F4 /* AdditionalCell.swift */; };
 		D34AED0E22C107BB00FD25F4 /* AdditionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D34AED0C22C107BB00FD25F4 /* AdditionalCell.xib */; };
 		D34AED1022C111D500FD25F4 /* AddStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34AED0F22C111D500FD25F4 /* AddStuffController.swift */; };
-		D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D385EF012291F4A300018550 /* MemberViewController.storyboard */; };
 		D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */; };
 		D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */; };
 		D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */; };
@@ -79,6 +80,8 @@
 		856521692291E84C0047436C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8565216F2291EE750047436C /* AddMemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddMemberViewController.storyboard; sourceTree = "<group>"; };
 		8575B09422CE0D1D002E9C58 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8575B09722CE3D03002E9C58 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
+		8575B09922CE3D14002E9C58 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		8580EE5722BA6F1E00E2407D /* FirstLaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLaunchViewController.storyboard; sourceTree = "<group>"; };
 		8580EE5922BA6F6E00E2407D /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		8580EE5B22BA7E1200E2407D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -90,7 +93,6 @@
 		D34AED0B22C107BB00FD25F4 /* AdditionalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalCell.swift; sourceTree = "<group>"; };
 		D34AED0C22C107BB00FD25F4 /* AdditionalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalCell.xib; sourceTree = "<group>"; };
 		D34AED0F22C111D500FD25F4 /* AddStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStuffController.swift; sourceTree = "<group>"; };
-		D385EF012291F4A300018550 /* MemberViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberViewController.storyboard; sourceTree = "<group>"; };
 		D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
 		D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
 		D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberSubviewController.swift; sourceTree = "<group>"; };
@@ -160,12 +162,10 @@
 				85EF961722BCC8A1004AA63A /* toDo List */,
 				D32124EE22BBC5E500A3DC1D /* Data */,
 				8580EE5622BA6EE200E2407D /* FirstLaunch */,
-				D385EF002291F48A00018550 /* Member */,
 				8565216E2291EE3B0047436C /* AddMember */,
 				8565216B2291ED9B0047436C /* Settings */,
 				856521662291E7CF0047436C /* HomeViewController */,
 				856520EC2288A75B0047436C /* AppDelegate.swift */,
-				8575B09322CE0D04002E9C58 /* Extensions */,
 				856520F62288A75C0047436C /* Assets.xcassets */,
 				856520F82288A75C0047436C /* LaunchScreen.storyboard */,
 				856520FB2288A75C0047436C /* Info.plist */,
@@ -198,6 +198,8 @@
 				D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */,
 				856521672291E8160047436C /* HomeViewController.storyboard */,
 				856521692291E84C0047436C /* HomeViewController.swift */,
+				8575B09622CE3CD9002E9C58 /* Details */,
+				8575B09322CE0D04002E9C58 /* Extensions */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -234,6 +236,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8575B09622CE3CD9002E9C58 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8575B09722CE3D03002E9C58 /* DetailsViewController.storyboard */,
+				8575B09922CE3D14002E9C58 /* DetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		8580EE5622BA6EE200E2407D /* FirstLaunch */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,14 +278,6 @@
 			children = (
 			);
 			path = AddStuff;
-			sourceTree = "<group>";
-		};
-		D385EF002291F48A00018550 /* Member */ = {
-			isa = PBXGroup;
-			children = (
-				D385EF012291F4A300018550 /* MemberViewController.storyboard */,
-			);
-			path = Member;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,11 +390,10 @@
 				856521682291E8160047436C /* HomeViewController.storyboard in Resources */,
 				856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */,
 				856520FA2288A75C0047436C /* LaunchScreen.storyboard in Resources */,
+				8575B09822CE3D03002E9C58 /* DetailsViewController.storyboard in Resources */,
 				D34AED0E22C107BB00FD25F4 /* AdditionalCell.xib in Resources */,
-				D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */,
 				8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */,
 				856520F72288A75C0047436C /* Assets.xcassets in Resources */,
-				D385EF022291F4A300018550 /* MemberViewController.storyboard in Resources */,
 				85C4529622BA90970037363D /* SettingsViewController.storyboard in Resources */,
 				856520F22288A75B0047436C /* Main.storyboard in Resources */,
 			);
@@ -429,6 +431,7 @@
 				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
 				D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */,
 				D34AED0D22C107BB00FD25F4 /* AdditionalCell.swift in Sources */,
+				8575B09A22CE3D14002E9C58 /* DetailsViewController.swift in Sources */,
 				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
 				85C4529422BA90430037363D /* SettingsViewController.swift in Sources */,
