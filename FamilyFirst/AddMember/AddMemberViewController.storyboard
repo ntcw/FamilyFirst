@@ -40,7 +40,11 @@
                                 <action selector="Cancel:" destination="5M3-SS-ACz" id="AC8-Bo-7zA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Y5F-pf-iG0"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Y5F-pf-iG0">
+                            <connections>
+                                <action selector="save:" destination="5M3-SS-ACz" id="aIL-DB-hdi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1d-Ao-SU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +90,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                                    <connections>
+                                                        <action selector="nameField:" destination="wQr-Tz-J4G" eventType="editingChanged" id="Htg-f5-p0D"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Picture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG4-3c-nJU">
                                                     <rect key="frame" x="38" y="77" width="90" height="21"/>
@@ -903,6 +910,7 @@
                         <outlet property="allergiesField" destination="v9P-FR-fcr" id="n0Q-Y8-86z"/>
                         <outlet property="allergiesPopover" destination="JOH-8n-JxH" id="cTe-cJ-lbS"/>
                         <outlet property="dateLabel" destination="gGz-Xd-ia0" id="N6x-XT-uL3"/>
+                        <outlet property="datePickerOutlet" destination="Khl-HA-8kZ" id="cpy-tO-7ND"/>
                         <outlet property="memberPhoto" destination="bD0-U5-N6A" id="cYN-6l-Vw9"/>
                         <outlet property="vaccinationTextview" destination="ps8-oa-WeF" id="X3e-Pt-a7v"/>
                         <outlet property="vaccinationView" destination="epM-RP-YL3" id="KTm-yt-zk6"/>

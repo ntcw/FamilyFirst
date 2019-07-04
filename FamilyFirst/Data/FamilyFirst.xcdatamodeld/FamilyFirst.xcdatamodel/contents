@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F203" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Additional" representedClassName="Additional" syncable="YES" codeGenerationType="class">
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FamilyMember" inverseName="newRelationship" inverseEntity="FamilyMember" syncable="YES"/>
+        <attribute name="additional" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FamilyMember" inverseName="toAdditional" inverseEntity="FamilyMember" syncable="YES"/>
     </entity>
     <entity name="FamilyMember" representedClassName="FamilyMember" syncable="YES" codeGenerationType="class">
-        <attribute name="addStuff" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="allergies" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bloodtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="healthCare" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNr" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Additional" inverseName="newRelationship" inverseEntity="Additional" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vaccinations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toAdditional" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Additional" inverseName="newRelationship" inverseEntity="Additional" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="task" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FamilyMember" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Task" positionX="-63" positionY="9" width="128" height="75"/>
-        <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="118"/>
-        <element name="Additional" positionX="-63" positionY="9" width="128" height="88"/>
-        <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="120"/>
+        <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="238"/>
+        <element name="Task" positionX="107.55078125" positionY="-16.24609375" width="128" height="75"/>
+        <element name="Additional" positionX="-187.046875" positionY="-7.71875" width="128" height="73"/>
     </elements>
 </model>

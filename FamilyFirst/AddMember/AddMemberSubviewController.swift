@@ -8,6 +8,12 @@
 import CoreData
 import UIKit
 
+protocol AddMemberSubviewControllerDelegate {
+    func getName(name: String?)
+    func getImage(image: UIImage?)
+    func getBirthdate(date: Date?)
+}
+
 class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
     
@@ -15,6 +21,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     @IBOutlet weak var vaccinationTextview: UITextView!
     @IBOutlet weak var allergiesField: UITextView!
     @IBOutlet var allergiesPopover: UIView!
+    @IBOutlet weak var datePickerOutlet: UIDatePicker!
     let blackView = UIView()
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
@@ -24,10 +31,15 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     var section1Hidden = true
     var section2Hidden = true
     var section3Hidden = true
+    
+    var delegate: AddMemberSubviewControllerDelegate?
 
     var newPhoto: UIImage? {
         didSet{
             memberPhoto.image = self.newPhoto
+            if let delegate = delegate{
+                delegate.getImage(image: self.newPhoto)
+            }
         }
     }
     
@@ -51,6 +63,9 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         tableView.reloadData()
         tableView.dataSource = self
         tableView.delegate = self
+        if let delegate = delegate{
+            delegate.getBirthdate(date: datePickerOutlet.date)
+        }
         
         
         setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
@@ -86,6 +101,11 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
 //        if let imgview = memberPhoto.image {
 //            PictureLabel.isEnabled = false
 //        }
+    }
+    @IBAction func nameField(_ sender: UITextField) {
+        if let delegate = delegate {
+            delegate.getName(name: sender.text)
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -281,6 +301,9 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MMMM/yyyy"
         dateLabel.text = dateFormatter.string(from: sender.date)
+        if let delegate = delegate{
+            delegate.getBirthdate(date: sender.date)
+        }
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){

@@ -7,12 +7,14 @@
 //
 
 
-
+import CoreData
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var members = MemberClass.allMembers
+    var selectedMember: FamilyMember?
+    var memberArray: [FamilyMember] = [FamilyMember]()
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var familyLabel: UILabel!
@@ -23,6 +25,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        members.loadMember()
         defaults.synchronize()
         let familyname = defaults.object(forKey: "familyName") as! String
         familyLabel.text = familyname
@@ -45,10 +48,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         var cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell", for: indexPath) as! MemberCellTableViewCell
         let member = members.getMember(at: indexPath.row)
         cell.Name.text = member?.name ?? ""
+        if let image = member?.picture{
+            cell.imageView?.image = UIImage(data: image)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 65
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
@@ -68,6 +79,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func buttonPressed(_ Button: UIButton){
         performSegue(withIdentifier: "toAddMember", sender: self)
         
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            memberArray = members.getMembers()
+            
+            let memberToDelete = members.getMember(at: indexPath.row)
+            
+            if let memberRemove = memberToDelete {
+                members.deleteMember(member: memberRemove)
+                memberArray.remove(at: indexPath.row)
+            //    tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+            }
+            members.loadMember()
+            tableView.reloadData()
+        }
     }
     
     

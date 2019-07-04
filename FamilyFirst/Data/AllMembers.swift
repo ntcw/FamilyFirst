@@ -42,14 +42,18 @@ class MemberClass {
     }
     
     
-    func save(name: String, date: Date){
+    func save(name: String, date: Date, image: UIImage? = nil){
         
         let member = FamilyMember(context: context)
         member.birthday = date
         member.name = name
+        member.picture = image?.pngData()
+        
+        
         
         do {
             try context.save()
+            loadMember()
         }catch let error as NSError {
             print(error.localizedDescription)
         }
