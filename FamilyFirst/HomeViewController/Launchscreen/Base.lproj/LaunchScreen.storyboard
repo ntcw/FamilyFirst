@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wjL-zs-WSa">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="crI-eV-WaW">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="wjL-zs-WSa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aPN-rp-pvP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi" translatesAutoresizingMaskIntoConstraints="NO" id="06R-Bz-nK3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eca-Ve-jBO">
+                                <rect key="frame" x="25" y="244" width="364" height="85"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="FamilyFirst">
+                                        <attributes>
+                                            <font key="NSFont" size="72" name="HelveticaNeue-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="family" translatesAutoresizingMaskIntoConstraints="NO" id="nwl-h3-2vL">
+                                <rect key="frame" x="157" y="429" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3bn-aa-5my"/>
+                                    <constraint firstAttribute="width" constant="100" id="sBe-dL-hAU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Eca-Ve-jBO" firstAttribute="top" secondItem="292-HM-DwM" secondAttribute="top" constant="200" id="04J-1v-jfo"/>
+                            <constraint firstItem="06R-Bz-nK3" firstAttribute="top" secondItem="aPN-rp-pvP" secondAttribute="top" id="4OT-Ab-aFW"/>
+                            <constraint firstItem="06R-Bz-nK3" firstAttribute="trailing" secondItem="292-HM-DwM" secondAttribute="trailing" id="5X2-ma-klH"/>
+                            <constraint firstItem="06R-Bz-nK3" firstAttribute="leading" secondItem="292-HM-DwM" secondAttribute="leading" id="72J-hg-lOR"/>
+                            <constraint firstItem="nwl-h3-2vL" firstAttribute="top" secondItem="Eca-Ve-jBO" secondAttribute="bottom" constant="100" id="Nw2-Xw-roU"/>
+                            <constraint firstItem="Eca-Ve-jBO" firstAttribute="leading" secondItem="292-HM-DwM" secondAttribute="leading" constant="25" id="Rpj-db-4jD"/>
+                            <constraint firstItem="292-HM-DwM" firstAttribute="trailing" secondItem="Eca-Ve-jBO" secondAttribute="trailing" constant="25" id="YAh-Gi-h50"/>
+                            <constraint firstItem="nwl-h3-2vL" firstAttribute="centerX" secondItem="aPN-rp-pvP" secondAttribute="centerX" id="dAE-87-aln"/>
+                            <constraint firstItem="Eca-Ve-jBO" firstAttribute="centerX" secondItem="aPN-rp-pvP" secondAttribute="centerX" id="s6O-hZ-guk"/>
+                            <constraint firstAttribute="bottom" secondItem="06R-Bz-nK3" secondAttribute="bottom" id="sjw-rJ-Mm3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="292-HM-DwM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gsi-kx-nX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="family" width="512" height="512"/>
+        <image name="multi" width="1125" height="2436"/>
+    </resources>
+</document>

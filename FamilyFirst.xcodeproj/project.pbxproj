@@ -167,7 +167,6 @@
 				856521662291E7CF0047436C /* HomeViewController */,
 				856520EC2288A75B0047436C /* AppDelegate.swift */,
 				856520F62288A75C0047436C /* Assets.xcassets */,
-				856520F82288A75C0047436C /* LaunchScreen.storyboard */,
 				856520FB2288A75C0047436C /* Info.plist */,
 				8580EE5B22BA7E1200E2407D /* Images.xcassets */,
 			);
@@ -199,6 +198,7 @@
 				856521672291E8160047436C /* HomeViewController.storyboard */,
 				856521692291E84C0047436C /* HomeViewController.swift */,
 				8575B09622CE3CD9002E9C58 /* Details */,
+				8575B09B22CE4B15002E9C58 /* Launchscreen */,
 				8575B09322CE0D04002E9C58 /* Extensions */,
 			);
 			path = HomeViewController;
@@ -243,6 +243,14 @@
 				8575B09922CE3D14002E9C58 /* DetailsViewController.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		8575B09B22CE4B15002E9C58 /* Launchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				856520F82288A75C0047436C /* LaunchScreen.storyboard */,
+			);
+			path = Launchscreen;
 			sourceTree = "<group>";
 		};
 		8580EE5622BA6EE200E2407D /* FirstLaunch */ = {

@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsView: UIView!
     
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"multi")!)
+     //   self.view.backgroundColor = UIColor(patternImage: UIImage(named:"multi")!)
         settingsView.center = settingsViewController.center
     }
     

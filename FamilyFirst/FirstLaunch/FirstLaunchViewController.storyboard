@@ -18,12 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="multi" translatesAutoresizingMaskIntoConstraints="NO" id="vaY-1f-jw4">
-                                <rect key="frame" x="-11" y="0.0" width="437" height="905"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi" translatesAutoresizingMaskIntoConstraints="NO" id="vaY-1f-jw4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-52-fw1">
-                                <rect key="frame" x="50" y="196" width="314" height="131"/>
+                                <rect key="frame" x="50" y="182" width="314" height="122"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <attributedString key="attributedText">
                                     <fragment content="FamilyFirst">
@@ -35,11 +34,10 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nI9-3K-ymO">
-                                <rect key="frame" x="178" y="674" width="59" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nI9-3K-ymO">
+                                <rect key="frame" x="177" y="606" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="0LR-7y-fD1"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="DKQ-GF-2Kj"/>
                                     <constraint firstAttribute="height" constant="60" id="EGL-jS-pRe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
@@ -50,14 +48,21 @@
                                     <segue destination="k16-1S-uoO" kind="show" id="V30-Th-ZzV"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter family name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgq-qp-iWz">
-                                <rect key="frame" x="94" y="593" width="226" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter family name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgq-qp-iWz">
+                                <rect key="frame" x="64" y="535" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ftx-Ws-uQD">
-                                <rect key="frame" x="64" y="529" width="286" height="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="family" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-10-cgx">
+                                <rect key="frame" x="157" y="317" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gcf-gv-hkZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="wSU-z6-xiO"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ftx-Ws-uQD">
+                                <rect key="frame" x="39" y="469" width="337" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Please enter the name of your family.">
                                         <attributes>
@@ -68,24 +73,26 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="family" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-10-cgx">
-                                <rect key="frame" x="102" y="348" width="210" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="Mgq-qp-iWz" secondAttribute="trailing" constant="94" id="8NS-0B-egQ"/>
-                            <constraint firstItem="nI9-3K-ymO" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="178" id="CcY-jT-zi8"/>
-                            <constraint firstItem="Ftx-Ws-uQD" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="64" id="HKc-w7-VCd"/>
+                            <constraint firstItem="hIu-10-cgx" firstAttribute="top" secondItem="XmY-52-fw1" secondAttribute="bottom" constant="40" id="05m-pZ-W45"/>
+                            <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="Mgq-qp-iWz" secondAttribute="trailing" constant="70" id="8NS-0B-egQ"/>
+                            <constraint firstItem="Ftx-Ws-uQD" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="39" id="HKc-w7-VCd"/>
                             <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="XmY-52-fw1" secondAttribute="trailing" constant="50" id="Iyy-yr-KJU"/>
-                            <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="Ftx-Ws-uQD" secondAttribute="trailing" constant="64" id="KQ8-3k-xrF"/>
+                            <constraint firstAttribute="bottom" secondItem="vaY-1f-jw4" secondAttribute="bottom" id="JUu-QH-o9n"/>
+                            <constraint firstItem="ke8-kG-KdB" firstAttribute="trailing" secondItem="Ftx-Ws-uQD" secondAttribute="trailing" constant="38" id="KQ8-3k-xrF"/>
+                            <constraint firstItem="Ftx-Ws-uQD" firstAttribute="top" secondItem="hIu-10-cgx" secondAttribute="bottom" constant="52" id="SPz-D6-dwk"/>
                             <constraint firstItem="XmY-52-fw1" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="50" id="TmA-Rs-Pf6"/>
-                            <constraint firstItem="Mgq-qp-iWz" firstAttribute="top" secondItem="Ftx-Ws-uQD" secondAttribute="bottom" constant="47" id="aQy-7I-cG3"/>
-                            <constraint firstItem="Mgq-qp-iWz" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="94" id="cF1-P8-Q0t"/>
-                            <constraint firstItem="XmY-52-fw1" firstAttribute="top" secondItem="ke8-kG-KdB" secondAttribute="top" constant="152" id="gfa-TL-b2B"/>
-                            <constraint firstItem="Ftx-Ws-uQD" firstAttribute="top" secondItem="XmY-52-fw1" secondAttribute="bottom" constant="202" id="u5W-yM-Qvv"/>
-                            <constraint firstItem="nI9-3K-ymO" firstAttribute="top" secondItem="Mgq-qp-iWz" secondAttribute="bottom" constant="51" id="y47-os-461"/>
+                            <constraint firstItem="Mgq-qp-iWz" firstAttribute="top" secondItem="Ftx-Ws-uQD" secondAttribute="bottom" constant="45" id="aQy-7I-cG3"/>
+                            <constraint firstItem="Mgq-qp-iWz" firstAttribute="leading" secondItem="ke8-kG-KdB" secondAttribute="leading" constant="64" id="cF1-P8-Q0t"/>
+                            <constraint firstAttribute="trailing" secondItem="vaY-1f-jw4" secondAttribute="trailing" id="el3-ut-ViQ"/>
+                            <constraint firstItem="XmY-52-fw1" firstAttribute="top" secondItem="ke8-kG-KdB" secondAttribute="top" constant="150" id="gfa-TL-b2B"/>
+                            <constraint firstItem="vaY-1f-jw4" firstAttribute="top" secondItem="nst-vn-Ty6" secondAttribute="top" id="ghB-Rv-3gq"/>
+                            <constraint firstItem="nI9-3K-ymO" firstAttribute="centerX" secondItem="nst-vn-Ty6" secondAttribute="centerX" id="nRe-QG-Trv"/>
+                            <constraint firstItem="vaY-1f-jw4" firstAttribute="leading" secondItem="nst-vn-Ty6" secondAttribute="leading" id="qTN-aK-SPT"/>
+                            <constraint firstItem="hIu-10-cgx" firstAttribute="centerX" secondItem="nst-vn-Ty6" secondAttribute="centerX" id="xkB-s6-cCG"/>
+                            <constraint firstItem="nI9-3K-ymO" firstAttribute="top" secondItem="Mgq-qp-iWz" secondAttribute="bottom" constant="41" id="y47-os-461"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ke8-kG-KdB"/>
                     </view>

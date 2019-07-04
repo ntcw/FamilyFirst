@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi" translatesAutoresizingMaskIntoConstraints="NO" id="dei-9O-y9u">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-qu-9cq">
                                 <rect key="frame" x="15" y="44" width="384" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,9 +59,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wfd-BY-PYp" firstAttribute="trailing" secondItem="JWO-qu-9cq" secondAttribute="trailing" constant="15" id="CsB-ex-3wh"/>
+                            <constraint firstItem="wfd-BY-PYp" firstAttribute="bottom" secondItem="dei-9O-y9u" secondAttribute="bottom" id="Pc1-K1-SMF"/>
                             <constraint firstItem="JWO-qu-9cq" firstAttribute="leading" secondItem="wfd-BY-PYp" secondAttribute="leading" constant="15" id="Th9-BH-hhW"/>
+                            <constraint firstItem="wfd-BY-PYp" firstAttribute="trailing" secondItem="dei-9O-y9u" secondAttribute="trailing" id="VbF-5y-amE"/>
                             <constraint firstAttribute="bottom" secondItem="JWO-qu-9cq" secondAttribute="bottom" constant="34" id="YMB-x7-F3z"/>
+                            <constraint firstItem="dei-9O-y9u" firstAttribute="leading" secondItem="wfd-BY-PYp" secondAttribute="leading" id="dxT-8W-i7F"/>
                             <constraint firstItem="JWO-qu-9cq" firstAttribute="top" secondItem="fIp-oL-GBL" secondAttribute="top" constant="44" id="ehB-MX-lbc"/>
+                            <constraint firstItem="dei-9O-y9u" firstAttribute="top" secondItem="wfd-BY-PYp" secondAttribute="top" id="ppa-ox-eZy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wfd-BY-PYp"/>
                     </view>
@@ -108,6 +115,7 @@
     </scenes>
     <resources>
         <image name="list" width="29" height="29"/>
+        <image name="multi" width="1125" height="2436"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>
