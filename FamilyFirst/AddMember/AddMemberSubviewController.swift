@@ -12,10 +12,26 @@ protocol AddMemberSubviewControllerDelegate {
     func getName(name: String?)
     func getImage(image: UIImage?)
     func getBirthdate(date: Date?)
+    func getHealthCare(healthCare: Int32?)
+    func getBloodType(bloodType: String?)
+    func getAllergy(allergy: String?)
+    func getVaccination(vaccination: String?)
+    func getPhoneNr(phoneNr: Int32?)
+    func getEmail(email: String?)
+    func getStreet(street: String?)
+    func getPostalCode(postalCode: Int16?)
+    func getCity(city: String?)
+    func getAdditionalTitle(additionalTitle: [String]?)
+    func getAdditionalDetail(additionalDetail: [String]?)
 }
 
 class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
+    
+    var actualView: UIView?
+    @IBOutlet var addStuffPopover: UIView!
+    @IBOutlet weak var detailsAddStuff: UILabel!
+    @IBOutlet weak var titleAddStuff: UILabel!
     
     @IBOutlet var vaccinationView: UIView!
     @IBOutlet weak var vaccinationTextview: UITextView!
@@ -26,6 +42,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
     var addStuff: [Additional] = []
+    var additional: [String] = []
+    var additionalTitle: [String] = []
     
     var titles = ["","Medical Information", "Contact Informations", "Additional Stuff"]
     var section1Hidden = true
@@ -40,10 +58,11 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             if let delegate = delegate{
                 delegate.getImage(image: self.newPhoto)
             }
+            PictureLabel.text = ""
         }
     }
     
-    let arr: [String] = ["hallo", "hallo2", "hallo3"]
+    
     
     
     enum ImageSource {
@@ -63,6 +82,10 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         tableView.reloadData()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        PictureLabel.font = UIFont(name: "KohinoorTelugu-Medium", size: 50)
+        PictureLabel.textColor = .white
+        
         if let delegate = delegate{
             delegate.getBirthdate(date: datePickerOutlet.date)
         }
@@ -70,6 +93,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         
         setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
         setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
+        
         
         
     }
@@ -95,13 +119,21 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         
         memberPhoto.isUserInteractionEnabled = true
         memberPhoto.addGestureRecognizer(tapGestureRecognizer)
-        
-        tableView.register(UINib(nibName: "AdditionalCell", bundle: nil), forCellReuseIdentifier: "AdditionalCell")
-        
-//        if let imgview = memberPhoto.image {
-//            PictureLabel.isEnabled = false
-//        }
+        tableView.register(AdditionalTableCell.self, forCellReuseIdentifier: "addCell")
+
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destController = segue.destination as? AddStuffController else {
+            return
+        }
+        destController.onDoneButton = {(title, detail) in
+            self.additionalTitle.append(title)
+            self.additional.append(detail)
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func nameField(_ sender: UITextField) {
         if let delegate = delegate {
             delegate.getName(name: sender.text)
@@ -217,22 +249,28 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             getPopover(popOver: allergiesPopover)
         }else if indexPath.section == 1 && indexPath.row == 3 {
             getPopover(popOver: vaccinationView)
+        }else if indexPath.section == 3 {
+            getPopover(popOver: addStuffPopover)
+            titleAddStuff.text = additionalTitle[indexPath.row]
+            detailsAddStuff.text = additional[indexPath.row]
         }
         
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AdditionalCell") as! AdditionalCell
-            cell.textLabel?.text = arr[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addCell") as! AdditionalTableCell
+
+            cell.textLabel?.text = additionalTitle[indexPath.row]
             //cell.textLabel?.text = "Hello"
             return cell
+            
         }
         return super.tableView(tableView, cellForRowAt: indexPath)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 3 {
-            return arr.count
+            return additional.count
             //the datasource of the dynamic section
         }
         return super.tableView(tableView, numberOfRowsInSection: section)
@@ -256,7 +294,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
     func getPopover(popOver: UIView){
         if let window = UIApplication.shared.keyWindow{
-            getBlackBackground()
+            getBlackBackground(secondView: popOver)
             window.addSubview(popOver)
             popOver.backgroundColor = .white
             popOver.center = view.center
@@ -268,22 +306,23 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         }
     }
     
-    func getBlackBackground() {
+    func getBlackBackground(secondView: UIView) {
         if let window = UIApplication.shared.keyWindow {
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
             blackView.frame = window.frame
             blackView.alpha = 0
+            actualView = secondView
             blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+            
             window.addSubview(blackView)
         }
     }
     
-    // exist pop over view by touching outside of the pop over view:
     @objc func handleDismiss() {
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
         }
-        allergiesPopover.removeFromSuperview()
+        actualView?.removeFromSuperview()
     }
     
     
@@ -310,7 +349,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         let tappedImage = tapGestureRecognizer.view as! UIImageView
     
         tappedImage.image = getImage()
-        PictureLabel.text = ""
+        //PictureLabel.text = ""
         tableView.reloadData()
         
         
@@ -349,77 +388,16 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         vaccinationView.removeFromSuperview()
     }
     
-    
-}
-
-
-
-extension AddMemberSubviewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
-        func getImage() -> UIImage?{
-            var newImage: UIImage?
-            choosePhotoMode()
-            if let newPhoto = newPhoto {
-                newImage = newPhoto
-                self.newPhoto = nil
-            }
-            return newImage
-        }
-    
-        func choosePhotoMode(){
-            let optionMenu = UIAlertController(title: nil, message: "Choose a Image", preferredStyle: .actionSheet)
-            let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default, handler: {(_: UIAlertAction!)-> Void in self.photoLibrary()})
-            
-            let takePhoto = UIAlertAction(title: "Take Photo", style: .default, handler: {(_: UIAlertAction!)-> Void in self.camera()})
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            
-            optionMenu.addAction(choosePhoto)
-            optionMenu.addAction(takePhoto)
-            optionMenu.addAction(cancelAction)
-            
-            present(optionMenu, animated: true, completion: nil)
-    }
-        
-        func camera(){
-            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                selectImageFrom(.photoLibrary)
-                return
-            }
-           selectImageFrom(.camera)
-        }
-    
-    func photoLibrary(){
-        guard UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) else {
-            return
-        }
-        selectImageFrom(.photoLibrary)
+    func addToArray(addtional: String) {
+        additional.append(addtional)
+        tableView.reloadData()
     }
     
-    func selectImageFrom(_ source: ImageSource){
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        switch source {
-        
-        case .photoLibrary:
-            imagePicker.sourceType = .photoLibrary
-        case .camera:
-            imagePicker.sourceType = .camera
-        }
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            newPhoto = image
-        } else {
-            print("Something went wrong")
-        }
-        dismiss(animated: true, completion: nil)
-    }
    
-        
+    
 }
+
+
+
+
+

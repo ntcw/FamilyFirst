@@ -15,18 +15,40 @@ class AddMemberViewController: UIViewController {
     var name: String?
     var date: Date?
     var image: UIImage?
+    var healthCare: Int32?
+    var bloodType: String?
+    var allergy: String?
+    var vaccination: String?
+    var phoneNr: Int32?
+    var email: String?
+    var street: String?
+    var zipcode: Int16?
+    var city: String?
+    var additionalTitle: [String]?
+    var additionalDetail: [String]?
+    
+    
     var subview: AddMemberSubviewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupKeyboardDismiss()
         guard let subviewController = children.first as? AddMemberSubviewController else {
             fatalError("Check Storyboard for missing controller")
         }
         subview = subviewController
         subview?.delegate = self
 
-        // Do any additional setup after loading the view.
+    }
+    func setupKeyboardDismiss() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 
@@ -35,23 +57,59 @@ class AddMemberViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func save(_ sender: UIBarButtonItem) {
-        MemberClass.allMembers.save(name: name ?? "nA", date: date ?? Date(), image: image)
+        if let name = name, let date = date{
+            MemberClass.allMembers.save(name: name, date: date,image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail)
+        }
         dismiss(animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
 }
 
 extension AddMemberViewController: AddMemberSubviewControllerDelegate{
+    func getVaccination(vaccination: String?) {
+        self.vaccination = vaccination
+    }
+    
+    func getAdditionalDetail(additionalDetail: [String]?) {
+        self.additionalDetail = additionalDetail
+    }
+    
+    func getHealthCare(healthCare: Int32?) {
+        self.healthCare = healthCare
+    }
+    
+    func getPhoneNr(phoneNr: Int32?) {
+        self.phoneNr = phoneNr
+    }
+    
+    func getPostalCode(postalCode: Int16?) {
+        self.zipcode = postalCode
+    }
+    
+    func getCity(city: String?) {
+        self.city = city
+    }
+    
+    func getAdditionalTitle(additionalTitle: [String]?) {
+        self.additionalTitle = additionalTitle
+    }
+    
+    
+    func getBloodType(bloodType: String?) {
+        self.bloodType = bloodType
+    }
+    
+    func getAllergy(allergy: String?) {
+        self.allergy = allergy
+    }
+    
+    func getEmail(email: String?) {
+        self.email = email
+    }
+    
+    func getStreet(street: String?) {
+        self.street = street
+    }
+    
     
     func getName(name: String?) {
         self.name = name

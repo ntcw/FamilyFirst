@@ -8,8 +8,17 @@
 
 import UIKit
 
-class AddStuffController: UIViewController, UITextViewDelegate {
+protocol AddStuffControllerDelegate {
+    func addToArray(addtional: String)
+}
 
+class AddStuffController: UIViewController, UITextViewDelegate {
+    
+    var additional: Additional?
+    
+    var onDoneButton:((String, String)->())?
+    
+    var delegate: AddStuffControllerDelegate?
     @IBOutlet weak var titleTextfield: UITextField!
     
     @IBOutlet weak var button: UIButton!
@@ -45,9 +54,13 @@ class AddStuffController: UIViewController, UITextViewDelegate {
         }
     }
     @IBAction func Done(_ sender: UIButton) {
-        dismiss(animated: true
-        )
+        if let title = titleTextfield.text {
+            onDoneButton?(title, myTextView.text)
+        }
+        dismiss(animated: true)
     }
+    
+    
     
     /*
     // MARK: - Navigation

@@ -1,20 +1,17 @@
 //
-//  AdditionalCell.swift
+//  AdditionalTableCell.swift
 //  FamilyFirst
 //
-//  Created by Benedikt Langer on 24.06.19.
+//  Created by Benedikt Langer on 05.07.19.
 //  Copyright © 2019 Niklas. All rights reserved.
 //
 
 import UIKit
 
-class AdditionalCell: UITableViewCell {
-
+class AdditionalTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
         // Initialization code
     }
 

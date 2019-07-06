@@ -42,12 +42,23 @@ class MemberClass {
     }
     
     
-    func save(name: String, date: Date, image: UIImage? = nil){
+    func save(name: String, date: Date, image: UIImage? = nil, healthCare: Int32, bloodtype: String?, allergy: String?, vaccination: String?, phoneNr: Int32, email: String?, street: String?, postalCode: Int16, city: String?, addTitle: [String]?, addDetail: [String]?){
         
         let member = FamilyMember(context: context)
         member.birthday = date
         member.name = name
         member.picture = image?.pngData()
+        member.healthCare = healthCare
+        member.bloodtype = bloodtype
+        member.allergies = allergy
+        member.vaccinations = vaccination
+        member.phoneNr = phoneNr
+        member.email = email
+        member.street = street
+        member.zipcode = postalCode
+        member.city = city
+        member.additionalTitle = addTitle
+        member.additional = addDetail
         
         
         
