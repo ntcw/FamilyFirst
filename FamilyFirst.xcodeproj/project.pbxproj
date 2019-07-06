@@ -33,6 +33,7 @@
 		D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32124EF22BBC5E500A3DC1D /* AllMembers.swift */; };
 		D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */; };
 		D34AED1022C111D500FD25F4 /* AddStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34AED0F22C111D500FD25F4 /* AddStuffController.swift */; };
+		D3891DE722D0FCB8003EC54E /* AdditionalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891DE622D0FCB8003EC54E /* AdditionalTableCell.swift */; };
 		D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */; };
 		D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */; };
 		D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */; };
@@ -91,6 +92,7 @@
 		D32124EF22BBC5E500A3DC1D /* AllMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMembers.swift; sourceTree = "<group>"; };
 		D32124F122BBC5E500A3DC1D /* FamilyFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FamilyFirst.xcdatamodel; sourceTree = "<group>"; };
 		D34AED0F22C111D500FD25F4 /* AddStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStuffController.swift; sourceTree = "<group>"; };
+		D3891DE622D0FCB8003EC54E /* AdditionalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalTableCell.swift; sourceTree = "<group>"; };
 		D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
 		D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberViewController.swift; sourceTree = "<group>"; };
 		D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberSubviewController.swift; sourceTree = "<group>"; };
@@ -217,13 +219,13 @@
 		8565216E2291EE3B0047436C /* AddMember */ = {
 			isa = PBXGroup;
 			children = (
+				D3891DE622D0FCB8003EC54E /* AdditionalTableCell.swift */,
 				D34AED0F22C111D500FD25F4 /* AddStuffController.swift */,
 				8565216F2291EE750047436C /* AddMemberViewController.storyboard */,
 				D3C111A322BBEBFD00E90738 /* DatePickerCell.swift */,
 				D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */,
 				D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */,
 				D3F101DF22CE32300017E9D4 /* ImagePicker.swift */,
-				D369FAD722CF512900264D30 /* AdditionalTableCell.swift */,
 			);
 			path = AddMember;
 			sourceTree = "<group>";
@@ -400,7 +402,6 @@
 				856521702291EE750047436C /* AddMemberViewController.storyboard in Resources */,
 				856520FA2288A75C0047436C /* LaunchScreen.storyboard in Resources */,
 				8575B09822CE3D03002E9C58 /* DetailsViewController.storyboard in Resources */,
-				D34AED0E22C107BB00FD25F4 /* AdditionalCell.xib in Resources */,
 				8580EE5822BA6F1E00E2407D /* FirstLaunchViewController.storyboard in Resources */,
 				856520F72288A75C0047436C /* Assets.xcassets in Resources */,
 				85C4529622BA90970037363D /* SettingsViewController.storyboard in Resources */,
@@ -437,17 +438,16 @@
 				852CD44522C0FE9B002EB998 /* NewTaskViewController.swift in Sources */,
 				D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */,
 				D3F101E222CE36FE0017E9D4 /* Additional.swift in Sources */,
-				D369FAD822CF512900264D30 /* AdditionalTableCell.swift in Sources */,
 				D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */,
 				D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */,
 				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
 				D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */,
-				D34AED0D22C107BB00FD25F4 /* AdditionalCell.swift in Sources */,
 				8575B09A22CE3D14002E9C58 /* DetailsViewController.swift in Sources */,
 				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,
 				856520ED2288A75B0047436C /* AppDelegate.swift in Sources */,
 				85C4529422BA90430037363D /* SettingsViewController.swift in Sources */,
 				8565216A2291E84C0047436C /* HomeViewController.swift in Sources */,
+				D3891DE722D0FCB8003EC54E /* AdditionalTableCell.swift in Sources */,
 				D34AED1022C111D500FD25F4 /* AddStuffController.swift in Sources */,
 				D3C111A422BBEBFD00E90738 /* DatePickerCell.swift in Sources */,
 			);
