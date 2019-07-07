@@ -14,7 +14,7 @@ protocol AddStuffControllerDelegate {
 
 class AddStuffController: UIViewController, UITextViewDelegate {
     
-    var additional: Additional?
+
     
     var onDoneButton:((String, String)->())?
     

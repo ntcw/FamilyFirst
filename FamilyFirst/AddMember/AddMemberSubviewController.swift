@@ -41,7 +41,6 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     let blackView = UIView()
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
-    var addStuff: [Additional] = []
     var additional: [String] = []
     var additionalTitle: [String] = []
     

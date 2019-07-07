@@ -107,7 +107,6 @@ class SettingsTableViewController: UITableViewController {
       
         deleteAllData(entity: "FamilyMember")
         deleteAllData(entity: "Task")
-        deleteAllData(entity: "Additional")
 
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0

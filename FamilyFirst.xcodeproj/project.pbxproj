@@ -39,7 +39,6 @@
 		D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */; };
 		D3C111A422BBEBFD00E90738 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C111A322BBEBFD00E90738 /* DatePickerCell.swift */; };
 		D3F101E022CE32300017E9D4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F101DF22CE32300017E9D4 /* ImagePicker.swift */; };
-		D3F101E222CE36FE0017E9D4 /* Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F101E122CE36FE0017E9D4 /* Additional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,6 @@
 		D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberSubviewController.swift; sourceTree = "<group>"; };
 		D3C111A322BBEBFD00E90738 /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		D3F101DF22CE32300017E9D4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		D3F101E122CE36FE0017E9D4 /* Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additional.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +277,6 @@
 			children = (
 				D32124EF22BBC5E500A3DC1D /* AllMembers.swift */,
 				D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */,
-				D3F101E122CE36FE0017E9D4 /* Additional.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -437,7 +434,6 @@
 				D3F101E022CE32300017E9D4 /* ImagePicker.swift in Sources */,
 				852CD44522C0FE9B002EB998 /* NewTaskViewController.swift in Sources */,
 				D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */,
-				D3F101E222CE36FE0017E9D4 /* Additional.swift in Sources */,
 				D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */,
 				D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */,
 				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
