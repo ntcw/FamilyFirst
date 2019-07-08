@@ -13,8 +13,4 @@ class TaskTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskNameLabel: UILabel!
     
-
-   
-    
-
 }

@@ -70,9 +70,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.memberPicture.layer.cornerRadius = cell.memberPicture.frame.height / 2
             cell.memberPicture.clipsToBounds = true
         } else {
-            cell.imageView?.image = standardPicture
+           
+            cell.memberPicture.image = standardPicture
+           
         }
-
+        
+        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        
         if counter == colorArray.count {
             counter = 0
         }

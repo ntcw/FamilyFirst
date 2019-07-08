@@ -107,6 +107,7 @@ class SettingsTableViewController: UITableViewController {
       
         deleteAllData(entity: "FamilyMember")
         deleteAllData(entity: "Task")
+        UserDefaults.standard.set("Meine Familie", forKey: "familyName")
 
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
@@ -115,6 +116,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     func deleteAllData(entity: String) {
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)

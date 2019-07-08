@@ -34,20 +34,6 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nI9-3K-ymO">
-                                <rect key="frame" x="177" y="606" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="0LR-7y-fD1"/>
-                                    <constraint firstAttribute="height" constant="60" id="EGL-jS-pRe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                <size key="titleShadowOffset" width="25" height="25"/>
-                                <state key="normal" title="Confirm" image="confirm"/>
-                                <connections>
-                                    <action selector="confirmButtonPressed:" destination="ARL-uQ-oeN" eventType="touchUpInside" id="AlU-PV-Aav"/>
-                                    <segue destination="k16-1S-uoO" kind="show" id="V30-Th-ZzV"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter family name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mgq-qp-iWz">
                                 <rect key="frame" x="64" y="535" width="280" height="30"/>
                                 <nil key="textColor"/>
@@ -73,6 +59,20 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nI9-3K-ymO">
+                                <rect key="frame" x="141" y="605" width="126" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="0LR-7y-fD1"/>
+                                    <constraint firstAttribute="height" constant="60" id="EGL-jS-pRe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <size key="titleShadowOffset" width="25" height="25"/>
+                                <state key="normal" title="Confirm" image="confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonPressed:" destination="ARL-uQ-oeN" eventType="touchUpInside" id="AlU-PV-Aav"/>
+                                    <segue destination="k16-1S-uoO" kind="show" id="V30-Th-ZzV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -89,10 +89,10 @@
                             <constraint firstAttribute="trailing" secondItem="vaY-1f-jw4" secondAttribute="trailing" id="el3-ut-ViQ"/>
                             <constraint firstItem="XmY-52-fw1" firstAttribute="top" secondItem="ke8-kG-KdB" secondAttribute="top" constant="150" id="gfa-TL-b2B"/>
                             <constraint firstItem="vaY-1f-jw4" firstAttribute="top" secondItem="nst-vn-Ty6" secondAttribute="top" id="ghB-Rv-3gq"/>
-                            <constraint firstItem="nI9-3K-ymO" firstAttribute="centerX" secondItem="nst-vn-Ty6" secondAttribute="centerX" id="nRe-QG-Trv"/>
+                            <constraint firstItem="nI9-3K-ymO" firstAttribute="centerX" secondItem="nst-vn-Ty6" secondAttribute="centerX" constant="-3" id="nRe-QG-Trv"/>
                             <constraint firstItem="vaY-1f-jw4" firstAttribute="leading" secondItem="nst-vn-Ty6" secondAttribute="leading" id="qTN-aK-SPT"/>
                             <constraint firstItem="hIu-10-cgx" firstAttribute="centerX" secondItem="nst-vn-Ty6" secondAttribute="centerX" id="xkB-s6-cCG"/>
-                            <constraint firstItem="nI9-3K-ymO" firstAttribute="top" secondItem="Mgq-qp-iWz" secondAttribute="bottom" constant="41" id="y47-os-461"/>
+                            <constraint firstItem="nI9-3K-ymO" firstAttribute="top" secondItem="Mgq-qp-iWz" secondAttribute="bottom" constant="40" id="y47-os-461"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ke8-kG-KdB"/>
                     </view>
