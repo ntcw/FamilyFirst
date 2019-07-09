@@ -13,6 +13,15 @@ class DatePickerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        backgroundColor = .clear
+        
+        textLabel?.textColor = .white
+        detailTextLabel?.textColor = .white
+        
+        let bg = UIView()
+        bg.backgroundColor = UIColor(displayP3Red: 194, green: 201, blue: 204, alpha: 0.3)
+        selectedBackgroundView = bg
         detailTextLabel?.text = getDate()
     }
 

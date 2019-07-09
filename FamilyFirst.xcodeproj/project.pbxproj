@@ -32,6 +32,9 @@
 		85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4529722BA96A00037363D /* SettingsTableViewController.swift */; };
 		D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32124EF22BBC5E500A3DC1D /* AllMembers.swift */; };
 		D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D32124F022BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld */; };
+		D344CB7D22D3A8EF00C277FF /* GeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344CB7C22D3A8EF00C277FF /* GeneralCell.swift */; };
+		D344CB7F22D3CDC600C277FF /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344CB7E22D3CDC600C277FF /* FontExtension.swift */; };
+		D344CB8122D3D7C600C277FF /* UIViewExtensio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344CB8022D3D7C600C277FF /* UIViewExtensio.swift */; };
 		D34AED1022C111D500FD25F4 /* AddStuffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34AED0F22C111D500FD25F4 /* AddStuffController.swift */; };
 		D3891DE722D0FCB8003EC54E /* AdditionalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891DE622D0FCB8003EC54E /* AdditionalTableCell.swift */; };
 		D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */; };
@@ -90,6 +93,9 @@
 		85C4529722BA96A00037363D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D32124EF22BBC5E500A3DC1D /* AllMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMembers.swift; sourceTree = "<group>"; };
 		D32124F122BBC5E500A3DC1D /* FamilyFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FamilyFirst.xcdatamodel; sourceTree = "<group>"; };
+		D344CB7C22D3A8EF00C277FF /* GeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCell.swift; sourceTree = "<group>"; };
+		D344CB7E22D3CDC600C277FF /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		D344CB8022D3D7C600C277FF /* UIViewExtensio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensio.swift; sourceTree = "<group>"; };
 		D34AED0F22C111D500FD25F4 /* AddStuffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStuffController.swift; sourceTree = "<group>"; };
 		D3891DE622D0FCB8003EC54E /* AdditionalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalTableCell.swift; sourceTree = "<group>"; };
 		D3C1119D22BBC80E00E90738 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -224,6 +230,8 @@
 				D3C111A122BBDF9300E90738 /* AddMemberSubviewController.swift */,
 				D3C1119F22BBDEDB00E90738 /* AddMemberViewController.swift */,
 				D3F101DF22CE32300017E9D4 /* ImagePicker.swift */,
+				D344CB7C22D3A8EF00C277FF /* GeneralCell.swift */,
+				D344CB7E22D3CDC600C277FF /* FontExtension.swift */,
 			);
 			path = AddMember;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				8575B09422CE0D1D002E9C58 /* UIColorExtension.swift */,
+				D344CB8022D3D7C600C277FF /* UIViewExtensio.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,7 +445,10 @@
 				D3C1119E22BBC80E00E90738 /* MemberCellTableViewCell.swift in Sources */,
 				D3C111A022BBDEDB00E90738 /* AddMemberViewController.swift in Sources */,
 				D32124F722BBC5E500A3DC1D /* AllMembers.swift in Sources */,
+				D344CB7F22D3CDC600C277FF /* FontExtension.swift in Sources */,
 				D32124F822BBC5E500A3DC1D /* FamilyFirst.xcdatamodeld in Sources */,
+				D344CB8122D3D7C600C277FF /* UIViewExtensio.swift in Sources */,
+				D344CB7D22D3A8EF00C277FF /* GeneralCell.swift in Sources */,
 				D3C111A222BBDF9300E90738 /* AddMemberSubviewController.swift in Sources */,
 				8575B09A22CE3D14002E9C58 /* DetailsViewController.swift in Sources */,
 				85C4529822BA96A00037363D /* SettingsTableViewController.swift in Sources */,

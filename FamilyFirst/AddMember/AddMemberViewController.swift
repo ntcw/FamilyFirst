@@ -40,6 +40,16 @@ class AddMemberViewController: UIViewController {
         subview?.delegate = self
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "multi")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+    }
+    
     func setupKeyboardDismiss() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         

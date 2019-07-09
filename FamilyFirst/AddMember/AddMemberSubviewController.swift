@@ -38,11 +38,25 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     @IBOutlet weak var allergiesField: UITextView!
     @IBOutlet var allergiesPopover: UIView!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    
+    @IBOutlet weak var healthCare: UILabel!
+    @IBOutlet weak var bloodType: UILabel!
+    @IBOutlet weak var phoneNr: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var street: UILabel!
+    @IBOutlet weak var postalCode: UILabel!
+    @IBOutlet weak var city: UILabel!
+    @IBOutlet weak var addAdditionalLabel: UILabel!
+    @IBOutlet weak var dateOutlet: UIDatePicker!
+    @IBOutlet weak var dateDetail: UILabel!
+    
+    
     let blackView = UIView()
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
     var additional: [String] = []
     var additionalTitle: [String] = []
+    public static var triggeredReload = false
     
     var titles = ["","Medical Information", "Contact Informations", "Additional Stuff"]
     var section1Hidden = true
@@ -78,9 +92,13 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        view.backgroundColor = .clear
+        
         tableView.reloadData()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
         
         PictureLabel.font = UIFont(name: "KohinoorTelugu-Medium", size: 50)
         PictureLabel.textColor = .white
@@ -93,6 +111,16 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
         setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
         
+        healthCare.textColor = .white
+        bloodType.textColor = .white
+        phoneNr.textColor = .white
+        email.textColor = .white
+        street.textColor = .white
+        postalCode.textColor = .white
+        city.textColor = .white
+        addAdditionalLabel.textColor = .white
+        
+        dateOutlet.date = Date() - (20*365*24*60*60)
         
         
     }
@@ -120,6 +148,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         memberPhoto.addGestureRecognizer(tapGestureRecognizer)
         tableView.register(AdditionalTableCell.self, forCellReuseIdentifier: "addCell")
 
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -129,6 +158,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         destController.onDoneButton = {(title, detail) in
             self.additionalTitle.append(title)
             self.additional.append(detail)
+            self.section3Hidden = false
+            
             self.tableView.reloadData()
         }
     }
@@ -159,11 +190,17 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         }
     }
     
+   
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let button = UIButton(type: .system)
+        button.titleLabel?.font = UIFont(name: "KohinoorTelugu-Bold", size: 20)
+        button.titleLabel?.font = button.titleLabel?.font.bold()
         button.setTitle(titles[section], for: .normal)
-        button.setTitleColor(.lightGray, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.darkGray, for: .selected)
+        button.backgroundColor = UIColor(displayP3Red: 194, green: 201, blue: 204, alpha: 0.1)
         
         button.addTarget(self, action: #selector(handleExpandClose(section:)), for: .touchUpInside)
         
@@ -187,10 +224,15 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
                 opensection(attribute: false, section: title)
             }else {
                 opensection(attribute: true, section: title)
+                
             }
         case "Additional Stuff":
             if section3Hidden {
                 opensection(attribute: false, section: title)
+                if(additionalTitle.count != 0) {
+                    let bottom = IndexPath(row: additionalTitle.count-1, section: 3)
+                    scrollToBottom(indexPath: bottom)
+                }
             }else {
                 opensection(attribute: true, section: title)
             }
@@ -203,9 +245,11 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
+        if section == 0 {
+            return 0
+        }
         
-        
-        return 40
+        return 50
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -220,9 +264,19 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             return 44
         }
          else if section3Hidden && section == "Additional Stuff" {
+            if let cell = tableView.cellForRow(at: indexPath) as? AdditionalTableCell {
+                UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .transitionFlipFromTop, animations: {
+                    cell.titleLabel.alpha = 0
+                }, completion: nil)
+            }
             return 0.0
         }else if !section3Hidden && section == "Additional Stuff" {
-            return 44
+            if let cell = tableView.cellForRow(at: indexPath) as? AdditionalTableCell {
+                UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .transitionFlipFromTop, animations: {
+                    cell.titleLabel.alpha = 1
+                }, completion: nil)
+            }
+            return 60
         }
         else if indexPath.section == 0 && indexPath.row == 0{
             return 175
@@ -238,6 +292,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == 1 && datePickerHidden{
@@ -259,14 +315,15 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "addCell") as! AdditionalTableCell
-
-            cell.textLabel?.text = additionalTitle[indexPath.row]
-            //cell.textLabel?.text = "Hello"
+            cell.additional = additionalTitle[indexPath.row]
+            cell.titleLabel.alpha = 1
             return cell
             
         }
         return super.tableView(tableView, cellForRowAt: indexPath)
     }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 3 {
             return additional.count
@@ -274,6 +331,12 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         }
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
+    
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.section == 3 {
+//            cell.contentView.layer.masksToBounds = true
+//        }
+//    }
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         if indexPath.section == 3 {
@@ -297,6 +360,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             window.addSubview(popOver)
             popOver.backgroundColor = .white
             popOver.center = view.center
+            popOver.layer.cornerRadius = 45
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackView.alpha = 1
@@ -392,11 +456,13 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         tableView.reloadData()
     }
     
+    func scrollToBottom(indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
    
     
 }
-
-
-
-
 

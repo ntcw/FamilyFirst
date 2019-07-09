@@ -24,6 +24,16 @@ class AddStuffController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var myTextView: UITextView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "multi")?.draw(in: self.view.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         button.layer.borderWidth = 1.0
@@ -55,7 +65,10 @@ class AddStuffController: UIViewController, UITextViewDelegate {
     }
     @IBAction func Done(_ sender: UIButton) {
         if let title = titleTextfield.text {
-            onDoneButton?(title, myTextView.text)
+            if title != "" {
+                onDoneButton?(title, myTextView.text)
+            }
+            
         }
         dismiss(animated: true)
     }
