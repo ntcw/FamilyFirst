@@ -27,7 +27,10 @@ protocol AddMemberSubviewControllerDelegate {
 
 class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
+    var selectedMember: FamilyMember?
     
+    var initialLaunch = true
+    var shouldhide = false
     var actualView: UIView?
     @IBOutlet var addStuffPopover: UIView!
     @IBOutlet weak var detailsAddStuff: UILabel!
@@ -38,6 +41,17 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     @IBOutlet weak var allergiesField: UITextView!
     @IBOutlet var allergiesPopover: UIView!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    
+    
+    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var healthCareTextfield: UITextField!
+    @IBOutlet weak var bloodTypeTextfield: UITextField!
+    @IBOutlet weak var phoneTextfield: UITextField!
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var postalTextfield: UITextField!
+    @IBOutlet weak var streetTextfield: UITextField!
+    @IBOutlet weak var cityTextfield: UITextField!
+    
     
     @IBOutlet weak var healthCare: UILabel!
     @IBOutlet weak var bloodType: UILabel!
@@ -91,6 +105,9 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     @IBOutlet weak var dateLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
+        setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
+        fillWithData()
         
         view.backgroundColor = .clear
         
@@ -103,13 +120,13 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         PictureLabel.font = UIFont(name: "KohinoorTelugu-Medium", size: 50)
         PictureLabel.textColor = .white
         
+        if initialLaunch{
+            dateOutlet.date = Date() - (20*365*24*60*60)
+            initialLaunch = false
+        }
         if let delegate = delegate{
             delegate.getBirthdate(date: datePickerOutlet.date)
         }
-        
-        
-        setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
-        setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
         
         healthCare.textColor = .white
         bloodType.textColor = .white
@@ -120,9 +137,40 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         city.textColor = .white
         addAdditionalLabel.textColor = .white
         
-        dateOutlet.date = Date() - (20*365*24*60*60)
         
         
+        
+        
+//        if let editMember = selectedMember {
+//            nameTextfield.text = editMember.name
+//        }
+        
+    }
+    
+    func fillWithData() {
+        if let editMember = selectedMember, initialLaunch {
+            nameTextfield.text = editMember.name
+            if let picture = editMember.picture {
+                memberPhoto.image = UIImage(data: picture)
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MMMM/yyyy"
+            dateLabel.text = dateFormatter.string(from: editMember.birthday ?? Date())
+            healthCareTextfield.text = "\(editMember.healthCare)"
+            bloodTypeTextfield.text = editMember.bloodtype
+            allergiesField.text = editMember.allergies
+            vaccinationTextview.text = editMember.vaccinations
+            phoneTextfield.text = "\(editMember.phoneNr)"
+            emailTextfield.text = editMember.email
+            streetTextfield.text = editMember.street
+            postalTextfield.text = "\(editMember.zipcode)"
+            cityTextfield.text = editMember.city
+            additionalTitle = editMember.additionalTitle ?? []
+            additional = editMember.additional ?? []
+            shouldhide = true
+
+           
+        }
     }
     
     func setTextView(textView: UITextView, placeHolder: String){
@@ -159,7 +207,10 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             self.additionalTitle.append(title)
             self.additional.append(detail)
             self.section3Hidden = false
-            
+            if let delegate = self.delegate {
+                delegate.getAdditionalTitle(additionalTitle: self.additionalTitle)
+                delegate.getAdditionalDetail(additionalDetail: self.additional)
+            }
             self.tableView.reloadData()
         }
     }
@@ -175,6 +226,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             textView.text = ""
             textView.textColor = UIColor.black
             textView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
+            
         }
     }
     
@@ -187,7 +239,16 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             }
             textView.textColor = UIColor.darkGray
             textView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
+        } else{
+            if let delegate = delegate {
+                if textView.restorationIdentifier == "vaccinationTextView"{
+                    delegate.getVaccination(vaccination: textView.text)
+                }else {
+                    delegate.getAllergy(allergy: textView.text)
+                }
+            }
         }
+        
     }
     
    
@@ -264,6 +325,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             return 44
         }
          else if section3Hidden && section == "Additional Stuff" {
+            
             if let cell = tableView.cellForRow(at: indexPath) as? AdditionalTableCell {
                 UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .transitionFlipFromTop, animations: {
                     cell.titleLabel.alpha = 0
@@ -272,6 +334,9 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             return 0.0
         }else if !section3Hidden && section == "Additional Stuff" {
             if let cell = tableView.cellForRow(at: indexPath) as? AdditionalTableCell {
+                if cell.titleLabel.isHidden{
+                    cell.titleLabel.isHidden = false
+                }
                 UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .transitionFlipFromTop, animations: {
                     cell.titleLabel.alpha = 1
                 }, completion: nil)
@@ -291,6 +356,17 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 3 && shouldhide{
+            if let cell = cell as? AdditionalTableCell {
+                cell.titleLabel.isHidden = true
+                if indexPath.row == additionalTitle.count-1 {
+                    shouldhide = false
+                }
+            }
+        }
     }
     
     
@@ -316,6 +392,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         if indexPath.section == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "addCell") as! AdditionalTableCell
             cell.additional = additionalTitle[indexPath.row]
+            
             cell.titleLabel.alpha = 1
             return cell
             
@@ -410,12 +487,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-    
         tappedImage.image = getImage()
-        //PictureLabel.text = ""
         tableView.reloadData()
-        
-        
     }
     
     
@@ -461,6 +534,54 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
+    
+    @IBAction func healthcareFunction(_ sender: UITextField) {
+        if let delegate = delegate{
+            if let number = Int(sender.text ?? "0") {
+                delegate.getHealthCare(healthCare: Int32(number))
+            }
+            
+        }
+    }
+    @IBAction func bloodTypeFunction(_ sender: UITextField) {
+        if let delegate = delegate {
+            delegate.getBloodType(bloodType: sender.text)
+        }
+    }
+    
+    @IBAction func phoneFunction(_ sender: UITextField) {
+        if let delegate = delegate {
+            let number = Int(sender.text ?? "0")
+                delegate.getPhoneNr(phoneNr: Int32(number ?? 0))
+        }
+    }
+    
+    @IBAction func emailFunc(_ sender: UITextField) {
+        if let delegate = delegate {
+            delegate.getEmail(email: sender.text)
+        }
+    }
+    
+    @IBAction func streetFunc(_ sender: UITextField) {
+        if let delegate = delegate {
+            delegate.getStreet(street: sender.text)
+        }
+    }
+    
+    @IBAction func postalFunc(_ sender: UITextField) {
+        if let delegate = delegate{
+            let number = Int(sender.text ?? "0")
+            delegate.getPostalCode(postalCode: Int16(number ?? 0))
+        }
+    }
+    @IBAction func cityFunction(_ sender: UITextField) {
+        if let delegate = delegate {
+            delegate.getCity(city: sender.text)
+        }
+    }
+    
+    
+    
     
    
     

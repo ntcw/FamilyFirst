@@ -141,11 +141,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == detailsSegue {
-            let vc = segue.destination as! DetailsViewController
-            let realVC = vc.self
-            realVC.selectedMember = selectedMember
+            let vc = segue.destination as! UINavigationController
+            if let realVC = vc.topViewController as? AddMemberViewController{
+                realVC.selectedMember = selectedMember
+                realVC.editMember = true
+                realVC.name = selectedMember?.name
+                realVC.date = selectedMember?.birthday
+                realVC.healthCare = selectedMember?.healthCare
+                realVC.bloodType = selectedMember?.bloodtype
+                realVC.allergy = selectedMember?.allergies
+                realVC.vaccination = selectedMember?.vaccinations
+                realVC.phoneNr = selectedMember?.phoneNr
+                realVC.email = selectedMember?.email
+                realVC.street = selectedMember?.street
+                realVC.zipcode = selectedMember?.zipcode
+                realVC.city = selectedMember?.city
+                realVC.additionalTitle = selectedMember?.additionalTitle
+                realVC.additionalDetail = selectedMember?.additionalTitle
+            }
+            
         }
     }
+    
+    
     
 }
 

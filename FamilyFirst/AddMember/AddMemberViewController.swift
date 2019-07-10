@@ -11,6 +11,8 @@ import UIKit
 class AddMemberViewController: UIViewController {
     
     var member: FamilyMember?
+    var selectedMember: FamilyMember?
+    var editMember = false
 
     var name: String?
     var date: Date?
@@ -67,10 +69,20 @@ class AddMemberViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func save(_ sender: UIBarButtonItem) {
-        if let name = name, let date = date{
-            MemberClass.allMembers.save(name: name, date: date,image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail)
-        }
+        
+            if let name = name, let date = date{
+                MemberClass.allMembers.save(name: name, date: date,image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail)
+            }
+        
         dismiss(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? AddMemberSubviewController{
+            vc.selectedMember = self.selectedMember
+            
+        }
+        
     }
 }
 

@@ -46,7 +46,7 @@ class AdditionalTableCell: UITableViewCell {
        var lbl = UILabel()
         lbl.textAlignment = .left
         lbl.textColor = .white
-        lbl.alpha = 1
+        
         lbl.font = UIFont(name: "KohinoorTelugu-Medium", size: 17)
         return lbl
     }()
