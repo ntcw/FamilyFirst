@@ -14,6 +14,8 @@ protocol AddStuffControllerDelegate {
 
 class AddStuffController: UIViewController, UITextViewDelegate {
     var onDoneButton: ((String, String) -> Void)?
+    
+    var onCancelButton: (()->Void)?
 
     var delegate: AddStuffControllerDelegate?
     @IBOutlet var titleTextfield: UITextField!
@@ -59,12 +61,15 @@ class AddStuffController: UIViewController, UITextViewDelegate {
         if let title = titleTextfield.text {
             if title != "" {
                 onDoneButton?(title, myTextView.text)
+            }else {
+                onCancelButton?()
             }
         }
         dismiss(animated: true)
     }
 
     @IBAction func cancel(_ sender: UIButton) {
+        onCancelButton?()
         dismiss(animated: true)
     }
 }

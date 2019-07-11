@@ -61,6 +61,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
     @IBOutlet var dateOutlet: UIDatePicker!
     @IBOutlet var dateDetail: UILabel!
 
+    var allergy: String?
+    var vaccination: String?
     let blackView = UIView()
     var datePickerHidden = true
     var imagePicker: UIImagePickerController!
@@ -98,9 +100,13 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
-        setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
+        if initialLaunch{
+            setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
+            setTextView(textView: vaccinationTextview, placeHolder: "Enter Vaccination")
+        }
+        
         fillWithData()
+        
 
         view.backgroundColor = .clear
 
@@ -111,10 +117,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
         PictureLabel.font = UIFont(name: "KohinoorTelugu-Medium", size: 50)
         PictureLabel.textColor = .white
 
-        if initialLaunch {
-            dateOutlet.date = Date() - (20 * 365 * 24 * 60 * 60)
-            initialLaunch = false
-        }
+        
         if let delegate = delegate {
             delegate.getBirthdate(date: datePickerOutlet.date)
         }
@@ -150,8 +153,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
             dateLabel.text = dateFormatter.string(from: editMember.birthday ?? Date())
             healthCareTextfield.text = "\(editMember.healthCare)"
             bloodTypeTextfield.text = editMember.bloodtype
-            allergiesField.text = editMember.allergies
-            vaccinationTextview.text = editMember.vaccinations
+            allergy = editMember.allergies
+            vaccination = editMember.vaccinations
             phoneTextfield.text = "\(editMember.phoneNr)"
             emailTextfield.text = editMember.email
             streetTextfield.text = editMember.street
@@ -195,6 +198,10 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
                 delegate.getAdditionalTitle(additionalTitle: self.additionalTitle)
                 delegate.getAdditionalDetail(additionalDetail: self.additional)
             }
+            self.tableView.reloadData()
+        }
+        destController.onCancelButton = {
+            self.shouldhide = true
             self.tableView.reloadData()
         }
     }
