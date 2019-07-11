@@ -9,7 +9,6 @@
 import UIKit
 
 class AddMemberViewController: UIViewController {
-    
     var member: FamilyMember?
     var selectedMember: FamilyMember?
     var editMember = false
@@ -29,8 +28,7 @@ class AddMemberViewController: UIViewController {
     var city: String?
     var additionalTitle: [String]?
     var additionalDetail: [String]?
-    
-    
+
     var subview: AddMemberSubviewController?
 
     override func viewDidLoad() {
@@ -41,107 +39,100 @@ class AddMemberViewController: UIViewController {
         }
         subview = subviewController
         subview?.delegate = self
-
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "multi")?.draw(in: self.view.bounds)
+        UIGraphicsBeginImageContext(view.frame.size)
+        UIImage(named: "multi")?.draw(in: view.bounds)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        self.view.backgroundColor = UIColor(patternImage: image)
+        view.backgroundColor = UIColor(patternImage: image)
     }
-    
+
     func setupKeyboardDismiss() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
+
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
 
     @IBAction func Cancel(_ sender: UIBarButtonItem) {
-        
         dismiss(animated: true)
     }
+
     @IBAction func save(_ sender: UIBarButtonItem) {
-        
-            if let name = name, let date = date{
-                MemberClass.allMembers.save(name: name, date: date,image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail, id: id)
-            }
-        
+        if let name = name, let date = date {
+            MemberClass.allMembers.save(name: name, date: date, image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail, id: id)
+        }
+
         dismiss(animated: true)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? AddMemberSubviewController{
-            vc.selectedMember = self.selectedMember
-            
+        if let vc = segue.destination as? AddMemberSubviewController {
+            vc.selectedMember = selectedMember
         }
-        
     }
 }
 
-extension AddMemberViewController: AddMemberSubviewControllerDelegate{
+extension AddMemberViewController: AddMemberSubviewControllerDelegate {
     func getVaccination(vaccination: String?) {
         self.vaccination = vaccination
     }
-    
+
     func getAdditionalDetail(additionalDetail: [String]?) {
         self.additionalDetail = additionalDetail
     }
-    
+
     func getHealthCare(healthCare: Int32?) {
         self.healthCare = healthCare
     }
-    
+
     func getPhoneNr(phoneNr: Int32?) {
         self.phoneNr = phoneNr
     }
-    
+
     func getPostalCode(postalCode: Int16?) {
-        self.zipcode = postalCode
+        zipcode = postalCode
     }
-    
+
     func getCity(city: String?) {
         self.city = city
     }
-    
+
     func getAdditionalTitle(additionalTitle: [String]?) {
         self.additionalTitle = additionalTitle
     }
-    
-    
+
     func getBloodType(bloodType: String?) {
         self.bloodType = bloodType
     }
-    
+
     func getAllergy(allergy: String?) {
         self.allergy = allergy
     }
-    
+
     func getEmail(email: String?) {
         self.email = email
     }
-    
+
     func getStreet(street: String?) {
         self.street = street
     }
-    
-    
+
     func getName(name: String?) {
         self.name = name
     }
-    
+
     func getBirthdate(date: Date?) {
         self.date = date
     }
-    
+
     func getImage(image: UIImage?) {
         self.image = image
     }

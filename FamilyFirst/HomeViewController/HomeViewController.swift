@@ -70,15 +70,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.memberPicture.layer.cornerRadius = cell.memberPicture.frame.height / 2
             cell.memberPicture.clipsToBounds = true
         } else {
-           
             cell.memberPicture.image = standardPicture
-           
         }
-        
+
         cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
         cell.layer.backgroundColor = UIColor.clear.cgColor
         cell.accessoryType = .disclosureIndicator
-    
 
         return cell
     }
@@ -123,19 +120,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.reloadData()
         }
     }
-    
+
     // Open details of abo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         memberArray = members.getMembers()
         selectedMember = memberArray[indexPath.row]
         performSegue(withIdentifier: detailsSegue, sender: self)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == detailsSegue {
             let vc = segue.destination as! UINavigationController
-            if let realVC = vc.topViewController as? AddMemberViewController{
+            if let realVC = vc.topViewController as? AddMemberViewController {
                 realVC.selectedMember = selectedMember
                 realVC.id = selectedMember?.id
                 realVC.editMember = true
@@ -156,12 +152,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 realVC.additionalTitle = selectedMember?.additionalTitle
                 realVC.additionalDetail = selectedMember?.additional
             }
-            
         }
     }
-    
-    
-    
 }
 
 extension UIImageView {

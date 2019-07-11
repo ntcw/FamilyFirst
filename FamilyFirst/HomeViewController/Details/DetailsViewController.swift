@@ -6,10 +6,9 @@
 //  Copyright © 2019 Niklas. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class DetailsViewController: UIViewController {
-    
-   var selectedMember: FamilyMember?
+    var selectedMember: FamilyMember?
 }

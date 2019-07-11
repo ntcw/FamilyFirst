@@ -9,30 +9,24 @@
 import UIKit
 
 class GeneralCell: UITableViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        
-        
+
         textLabel?.textColor = .white
         detailTextLabel?.textColor = .white
-        
-        if reuseIdentifier == "CellWithTextField"{
+
+        if reuseIdentifier == "CellWithTextField" {
             selectionStyle = .none
-        }else{
+        } else {
             let bg = UIView()
             bg.backgroundColor = UIColor(displayP3Red: 194, green: 201, blue: 204, alpha: 0.3)
-            
+
             selectedBackgroundView = bg
         }
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
