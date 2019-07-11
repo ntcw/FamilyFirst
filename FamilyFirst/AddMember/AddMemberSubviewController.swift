@@ -430,6 +430,21 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         }
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 3 {
+            if editingStyle == .delete {
+                additionalTitle.remove(at: indexPath.row)
+                additional.remove(at: indexPath.row)
+                if let delegate = delegate {
+                    delegate.getAdditionalTitle(additionalTitle: additionalTitle)
+                    delegate.getAdditionalDetail(additionalDetail: additional)
+                }
+                tableView.reloadData()
+                
+            }
+        }
+    }
+    
     
     func getPopover(popOver: UIView){
         if let window = UIApplication.shared.keyWindow{

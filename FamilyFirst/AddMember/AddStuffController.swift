@@ -66,6 +66,9 @@ class AddStuffController: UIViewController, UITextViewDelegate {
         }
         dismiss(animated: true)
     }
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     
     
     

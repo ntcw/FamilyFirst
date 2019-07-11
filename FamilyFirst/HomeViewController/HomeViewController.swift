@@ -137,7 +137,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let vc = segue.destination as! UINavigationController
             if let realVC = vc.topViewController as? AddMemberViewController{
                 realVC.selectedMember = selectedMember
+                realVC.id = selectedMember?.id
                 realVC.editMember = true
+                if let pictureData = selectedMember?.picture {
+                    realVC.image = UIImage(data: pictureData)
+                }
                 realVC.name = selectedMember?.name
                 realVC.date = selectedMember?.birthday
                 realVC.healthCare = selectedMember?.healthCare
@@ -150,7 +154,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 realVC.zipcode = selectedMember?.zipcode
                 realVC.city = selectedMember?.city
                 realVC.additionalTitle = selectedMember?.additionalTitle
-                realVC.additionalDetail = selectedMember?.additionalTitle
+                realVC.additionalDetail = selectedMember?.additional
             }
             
         }

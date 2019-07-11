@@ -14,6 +14,7 @@ class AddMemberViewController: UIViewController {
     var selectedMember: FamilyMember?
     var editMember = false
 
+    var id: Int32?
     var name: String?
     var date: Date?
     var image: UIImage?
@@ -71,7 +72,7 @@ class AddMemberViewController: UIViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         
             if let name = name, let date = date{
-                MemberClass.allMembers.save(name: name, date: date,image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail)
+                MemberClass.allMembers.save(name: name, date: date,image: image, healthCare: healthCare ?? 0, bloodtype: bloodType ?? "", allergy: allergy ?? "", vaccination: vaccination ?? "", phoneNr: phoneNr ?? 0, email: email ?? "", street: street ?? "", postalCode: zipcode ?? 0, city: city ?? "", addTitle: additionalTitle, addDetail: additionalDetail, id: id)
             }
         
         dismiss(animated: true)

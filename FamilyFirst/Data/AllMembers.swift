@@ -42,10 +42,10 @@ class MemberClass {
     }
     
     
-    func save(name: String, date: Date, image: UIImage? = nil, healthCare: Int32, bloodtype: String?, allergy: String?, vaccination: String?, phoneNr: Int32, email: String?, street: String?, postalCode: Int16, city: String?, addTitle: [String]?, addDetail: [String]?){
+    func save(name: String, date: Date, image: UIImage? = nil, healthCare: Int32, bloodtype: String?, allergy: String?, vaccination: String?, phoneNr: Int32, email: String?, street: String?, postalCode: Int16, city: String?, addTitle: [String]?, addDetail: [String]?, id: Int32?){
         
         let request = NSFetchRequest<NSManagedObject>(entityName: "FamilyMember")
-        let predicate = NSPredicate(format: "name == %@", name)
+        let predicate = NSPredicate(format: "id == %i", id ?? -1)
         request.predicate = predicate
         
 
@@ -74,6 +74,7 @@ class MemberClass {
             member.city = city
             member.additionalTitle = addTitle
             member.additional = addDetail
+            member.id = Int32(count())
             
             
             try context.save()

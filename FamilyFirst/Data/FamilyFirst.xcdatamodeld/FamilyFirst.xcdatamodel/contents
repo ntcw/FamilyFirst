@@ -9,6 +9,7 @@
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="healthCare" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNr" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -21,7 +22,7 @@
         <attribute name="task" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="255"/>
+        <element name="FamilyMember" positionX="-353.94140625" positionY="-63.03125" width="128" height="270"/>
         <element name="Task" positionX="107.55078125" positionY="-16.24609375" width="128" height="75"/>
     </elements>
 </model>
