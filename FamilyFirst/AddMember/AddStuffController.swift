@@ -36,15 +36,9 @@ class AddStuffController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = UIColor.black.cgColor
-        
         myTextView.text = "Insert Information"
         myTextView.textColor = UIColor.lightGray
         myTextView.delegate = self
-        
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func titleTextAction(_ sender: UITextField) {

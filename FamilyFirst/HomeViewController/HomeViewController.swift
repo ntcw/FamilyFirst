@@ -76,16 +76,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
-        
-        if counter == colorArray.count {
-            counter = 0
-        }
-
-//        cell.layer.backgroundColor = UIColor(hexString: colorBlueHex).cgColor
-//       cell.layer.backgroundColor = colorArray[counter].cgColor
         cell.layer.backgroundColor = UIColor.clear.cgColor
         cell.accessoryType = .disclosureIndicator
-        counter += 1
+    
 
         return cell
     }

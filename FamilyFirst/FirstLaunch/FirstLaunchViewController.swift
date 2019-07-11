@@ -15,6 +15,12 @@ class FirstLaunchViewController: UIViewController {
     override func viewDidLoad() {
             super.viewDidLoad()
             setupKeyboardDismiss()
+        let attributes = [
+            NSAttributedString.Key.font : UIFont(name: "KohinoorTelugu-Medium", size: 13)!
+            ]
+        
+        familyName.attributedPlaceholder = NSAttributedString(string: "Enter family name", attributes:attributes)
+        
           
       
         }

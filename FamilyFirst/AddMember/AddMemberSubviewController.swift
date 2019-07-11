@@ -9,6 +9,7 @@ import CoreData
 import UIKit
 
 protocol AddMemberSubviewControllerDelegate {
+    
     func getName(name: String?)
     func getImage(image: UIImage?)
     func getBirthdate(date: Date?)
@@ -71,8 +72,9 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     var additional: [String] = []
     var additionalTitle: [String] = []
     public static var triggeredReload = false
+    let greyBackgroundColor = UIColor(displayP3Red: 194, green: 201, blue: 204, alpha: 0.3)
     
-    var titles = ["","Medical Information", "Contact Informations", "Additional Stuff"]
+    var titles = ["","Medical Information", "Contact Information", "Additional Information"]
     var section1Hidden = true
     var section2Hidden = true
     var section3Hidden = true
@@ -89,9 +91,6 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         }
     }
     
-    
-    
-    
     enum ImageSource {
         case photoLibrary
         case camera
@@ -103,6 +102,8 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     @IBOutlet weak var memberPhoto: UIImageView!
     
     @IBOutlet weak var dateLabel: UILabel!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTextView(textView: allergiesField, placeHolder: "Enter Allergy")
@@ -136,14 +137,17 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         postalCode.textColor = .white
         city.textColor = .white
         addAdditionalLabel.textColor = .white
-        
-        
-        
-        
-        
-//        if let editMember = selectedMember {
-//            nameTextfield.text = editMember.name
-//        }
+        nameTextfield.backgroundColor = greyBackgroundColor
+        healthCareTextfield.backgroundColor = greyBackgroundColor
+        bloodTypeTextfield.backgroundColor = greyBackgroundColor
+        allergiesField.backgroundColor = greyBackgroundColor
+        vaccinationTextview.backgroundColor = greyBackgroundColor
+        phoneTextfield.backgroundColor = greyBackgroundColor
+        emailTextfield.backgroundColor = greyBackgroundColor
+        streetTextfield.backgroundColor = greyBackgroundColor
+        postalTextfield.backgroundColor = greyBackgroundColor
+        cityTextfield.backgroundColor = greyBackgroundColor
+
         
     }
     
@@ -174,9 +178,9 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
     }
     
     func setTextView(textView: UITextView, placeHolder: String){
+        
         textView.text = placeHolder
         textView.textColor = UIColor.darkGray
-//        TextView.font = UIFont(name: "KohinoorTelugu-Medium", size: 14)
         textView.delegate = self
         textView.layer.borderWidth = 0.5
         textView.layer.borderColor = UIColor.lightGray.cgColor
@@ -280,14 +284,14 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             }else {
                 opensection(attribute: true, section: title)
             }
-        case "Contact Informations":
+        case "Contact Information":
             if section2Hidden {
                 opensection(attribute: false, section: title)
             }else {
                 opensection(attribute: true, section: title)
                 
             }
-        case "Additional Stuff":
+        case "Additional Information":
             if section3Hidden {
                 opensection(attribute: false, section: title)
                 if(additionalTitle.count != 0) {
@@ -319,12 +323,12 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             return 0.0
         }else if !section1Hidden && section == "Medical Information" {
             return 44
-        }else if section2Hidden && section == "Contact Informations" {
+        }else if section2Hidden && section == "Contact Information" {
             return 0.0
-        }else if !section2Hidden && section == "Contact Informations" {
+        }else if !section2Hidden && section == "Contact Information" {
             return 44
         }
-         else if section3Hidden && section == "Additional Stuff" {
+         else if section3Hidden && section == "Additional Information" {
             
             if let cell = tableView.cellForRow(at: indexPath) as? AdditionalTableCell {
                 UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .transitionFlipFromTop, animations: {
@@ -332,7 +336,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
                 }, completion: nil)
             }
             return 0.0
-        }else if !section3Hidden && section == "Additional Stuff" {
+        }else if !section3Hidden && section == "Additional Information" {
             if let cell = tableView.cellForRow(at: indexPath) as? AdditionalTableCell {
                 if cell.titleLabel.isHidden{
                     cell.titleLabel.isHidden = false
@@ -409,11 +413,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
     
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.section == 3 {
-//            cell.contentView.layer.masksToBounds = true
-//        }
-//    }
+
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         if indexPath.section == 3 {
@@ -501,7 +501,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate{
             break
         case "Medical Information":
             section1Hidden = attribute
-        case "Contact Informations":
+        case "Contact Information":
             section2Hidden = attribute
         default:
             section3Hidden = attribute
