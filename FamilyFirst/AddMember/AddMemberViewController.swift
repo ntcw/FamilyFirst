@@ -17,11 +17,11 @@ class AddMemberViewController: UIViewController {
     var name: String?
     var date: Date?
     var image: UIImage?
-    var healthCare: Int32?
+    var healthCare: Int64?
     var bloodType: String?
     var allergy: String?
     var vaccination: String?
-    var phoneNr: Int32?
+    var phoneNr: Int64?
     var email: String?
     var street: String?
     var zipcode: Int16?
@@ -89,11 +89,11 @@ extension AddMemberViewController: AddMemberSubviewControllerDelegate {
         self.additionalDetail = additionalDetail
     }
 
-    func getHealthCare(healthCare: Int32?) {
+    func getHealthCare(healthCare: Int64?) {
         self.healthCare = healthCare
     }
 
-    func getPhoneNr(phoneNr: Int32?) {
+    func getPhoneNr(phoneNr: Int64?) {
         self.phoneNr = phoneNr
     }
 

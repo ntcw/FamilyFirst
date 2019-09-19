@@ -12,11 +12,11 @@ protocol AddMemberSubviewControllerDelegate {
     func getName(name: String?)
     func getImage(image: UIImage?)
     func getBirthdate(date: Date?)
-    func getHealthCare(healthCare: Int32?)
+    func getHealthCare(healthCare: Int64?)
     func getBloodType(bloodType: String?)
     func getAllergy(allergy: String?)
     func getVaccination(vaccination: String?)
-    func getPhoneNr(phoneNr: Int32?)
+    func getPhoneNr(phoneNr: Int64?)
     func getEmail(email: String?)
     func getStreet(street: String?)
     func getPostalCode(postalCode: Int16?)
@@ -512,7 +512,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
     @IBAction func healthcareFunction(_ sender: UITextField) {
         if let delegate = delegate {
             if let number = Int(sender.text ?? "0") {
-                delegate.getHealthCare(healthCare: Int32(number))
+                delegate.getHealthCare(healthCare: Int64(number))
             }
         }
     }
@@ -526,7 +526,7 @@ class AddMemberSubviewController: UITableViewController, UITextViewDelegate {
     @IBAction func phoneFunction(_ sender: UITextField) {
         if let delegate = delegate {
             let number = Int(sender.text ?? "0")
-            delegate.getPhoneNr(phoneNr: Int32(number ?? 0))
+            delegate.getPhoneNr(phoneNr: Int64(number ?? 0))
         }
     }
 

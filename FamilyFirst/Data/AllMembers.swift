@@ -42,7 +42,7 @@ class MemberClass {
     }
     
     
-    func save(name: String, date: Date, image: UIImage? = nil, healthCare: Int32, bloodtype: String?, allergy: String?, vaccination: String?, phoneNr: Int32, email: String?, street: String?, postalCode: Int16, city: String?, addTitle: [String]?, addDetail: [String]?, id: Int32?){
+    func save(name: String, date: Date, image: UIImage? = nil, healthCare: Int64, bloodtype: String?, allergy: String?, vaccination: String?, phoneNr: Int64, email: String?, street: String?, postalCode: Int16, city: String?, addTitle: [String]?, addDetail: [String]?, id: Int32?){
         
         let request = NSFetchRequest<NSManagedObject>(entityName: "FamilyMember")
         let predicate = NSPredicate(format: "id == %i", id ?? -1)
